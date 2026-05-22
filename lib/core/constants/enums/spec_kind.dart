@@ -1,0 +1,1 @@
+enum SpecKind { normal, price, discount }

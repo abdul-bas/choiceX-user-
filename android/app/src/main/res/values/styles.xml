@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LaunchTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+
+  
+    <style name="NormalTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+      
+        <item name="colorPrimary">@android:color/black</item>
+        <item name="colorPrimaryVariant">@android:color/black</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <item name="colorSecondary">@android:color/black</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <item name="android:windowBackground">@android:color/white</item>
+
+    </style>
+
+</resources>
