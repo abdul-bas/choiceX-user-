@@ -7,22 +7,45 @@ import 'package:coice/ui/screens/product/product_detail_page.dart';
 import 'package:flutter/material.dart';
 
 class SearchLogic {
-  static ProductModel getProduct({
+  static ProductModel? getProduct({
     required List<ProductModel> products,
     required Map<String, dynamic> item,
   }) {
-    return products.firstWhere(
-      (e) => e.id == item['productId'],
-    );
+    try {
+      return products.firstWhere(
+        (e) => e.id == item['productId'],
+      );
+    } catch (_) {
+      return null;
+    }
   }
 
   static int getVariantIndex(
     Map<String, dynamic> activity,
   ) {
-    return int.parse(
-      activity['variantIndex'],
-    );
+    final value = activity['variantIndex'];
+
+    if (value is int) return value;
+
+    if (value is String) {
+      return int.tryParse(value) ?? 0;
+    }
+
+    return 0;
   }
+
+static List<ProductModel> findExptionProduct(
+  List<ProductModel> products,
+  List<Map<String, dynamic>> activity,
+) {
+  for (var i in activity) {
+    products = products.where(
+      (p) => p.id != i['productId'],
+    ).toList();
+  }
+
+  return products;
+}
 
   static Uint8List decodeImage(
     ProductModel product,
@@ -55,7 +78,6 @@ class SearchLogic {
   static bool hasDiscount(int discount) {
     return discount > 0;
   }
-    
 
   static Uint8List getImageBytes({
     required ProductModel product,
@@ -66,7 +88,6 @@ class SearchLogic {
     );
   }
 
-  
   static void navigateToDetails(
     BuildContext context,
     ProductModel product,

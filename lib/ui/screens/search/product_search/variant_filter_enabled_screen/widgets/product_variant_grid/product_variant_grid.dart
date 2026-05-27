@@ -1,4 +1,3 @@
-
 import 'package:coice/core/constants/app_colors/app_colors.dart';
 
 import 'package:coice/data/models/prodect_model.dart';
@@ -7,6 +6,7 @@ import 'package:coice/ui/screens/search/controller/controller.dart';
 import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/card_info.dart';
 import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/image_card.dart';
 import 'package:flutter/material.dart';
+
 class ProductVariantGrid extends StatelessWidget {
   const ProductVariantGrid({
     super.key,
@@ -24,61 +24,49 @@ class ProductVariantGrid extends StatelessWidget {
     return GridView.builder(
       padding: const EdgeInsets.all(12),
       shrinkWrap: true,
-      physics:
-          physics ??
-          const AlwaysScrollableScrollPhysics(),
+      physics: physics ?? const AlwaysScrollableScrollPhysics(),
       itemCount: allVariant.length,
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
-        childAspectRatio: 0.62,
+        childAspectRatio: 0.60,
       ),
       itemBuilder: (context, index) {
         final item = allVariant[index];
 
-        final variantIndex =
-            SearchLogic.getVariantIndex(
+        final int variantIndex = SearchLogic.getVariantIndex(
           item,
         );
 
-        final product =
-            SearchLogic.getProduct(
+        final product = SearchLogic.getProduct(
           item: item,
           products: products,
         );
-
-        final bytes =
-            SearchLogic.getImageBytes(
+        if (product == null) return SizedBox();
+        final bytes = SearchLogic.getImageBytes(
           product: product,
           variantIndex: variantIndex,
         );
 
-        final discountedPrice =
-            SearchLogic
-                .getDiscountedPrice(
+        final discountedPrice = SearchLogic.getDiscountedPrice(
           product: product,
           variantIndex: variantIndex,
         );
 
-        final discount =
-            SearchLogic.getDiscount(
+        final discount = SearchLogic.getDiscount(
           product: product,
           variantIndex: variantIndex,
         );
 
-        final hasDiscount =
-            SearchLogic.hasDiscount(
+        final hasDiscount = SearchLogic.hasDiscount(
           discount,
         );
 
         return InkWell(
-          borderRadius:
-              BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(18),
           onTap: () {
-            SearchLogic
-                .navigateToDetails(
+            SearchLogic.navigateToDetails(
               context,
               product,
               variantIndex,
@@ -87,24 +75,20 @@ class ProductVariantGrid extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius:
-                  BorderRadius.circular(18),
+              borderRadius: BorderRadius.circular(18),
               border: Border.all(
                 color: AppColors.grey300,
               ),
               boxShadow: [
                 BoxShadow(
-                  color:
-                      AppColors.shadowFaint5,
+                  color: AppColors.shadowFaint5,
                   blurRadius: 12,
-                  offset:
-                      const Offset(0, 4),
+                  offset: const Offset(0, 4),
                 ),
               ],
             ),
             child: Column(
-              crossAxisAlignment:
-                  CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 buildFilterVariantCardImage(
                   bytes: bytes,
@@ -115,10 +99,8 @@ class ProductVariantGrid extends StatelessWidget {
                   context: context,
                   product: product,
                   variantIndex: variantIndex,
-                  discountedPrice:
-                      discountedPrice,
-                  hasDiscount:
-                      hasDiscount,
+                  discountedPrice: discountedPrice,
+                  hasDiscount: hasDiscount,
                 ),
               ],
             ),

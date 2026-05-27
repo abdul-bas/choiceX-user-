@@ -1,3 +1,6 @@
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ProductModel {
   String id;
   String sellerId;
@@ -13,12 +16,12 @@ class ProductModel {
   String size;
   String tag;
   List<String> imges;
-  String manufactureDate;
-  String addedDate;
+  DateTime manufactureDate;
+  DateTime addedDate;
   String status;
   Map<String, dynamic> rating;
   List<Map<String, dynamic>> variants;
-final int expectedDeliveryDays;
+  final int expectedDeliveryDays;
 
   ProductModel({
     required this.id,
@@ -39,41 +42,43 @@ final int expectedDeliveryDays;
     required this.status,
     required this.imges,
     required this.variants,
-     this.rating=const {},
-      required this.expectedDeliveryDays,
+    this.rating = const {},
+    required this.expectedDeliveryDays,
   });
+
   Map<String, dynamic> toMap() {
-  return {
-    'id': id,
-    'sellerId': sellerId,
-    'ProductName': productName,
-    'Brand': brand,
-    'Model': model,
-    'Description': description,
-    'Category': category,
-    'Type': productType,
-    'ConnectivityOptions': connectivityOptions,
-    'Warranty': warranty,
-    'Weight': weight,
-    'SizeDimensions': size,
-    'TagsKeywords': tag,
-    'ManufactureDate': manufactureDate,
-    'AddedDate': addedDate,
-    'status': status,
-    'Productimages': imges,
-    'rating': rating,
-    'Variant': variants,
-     'expectedDeliveryDays': expectedDeliveryDays,
-  };
-}
+    return {
+      'id': id,
+      'sellerId': sellerId,
+      'ProductName': productName,
+      'Brand': brand,
+      'Model': model,
+      'Description': description,
+      'Category': category,
+      'Type': productType,
+      'ConnectivityOptions': connectivityOptions,
+      'Warranty': warranty,
+      'Weight': weight,
+      'SizeDimensions': size,
+      'TagsKeywords': tag,
 
+     
+      'ManufactureDate': Timestamp.fromDate(manufactureDate),
+      'AddedDate': Timestamp.fromDate(addedDate),
 
-  factory ProductModel.fromMap(Map<String, dynamic> map, [int? variantIndex]) {
+      'status': status,
+      'Productimages': imges,
+      'rating': rating,
+      'Variant': variants,
+      'expectedDeliveryDays': expectedDeliveryDays,
+    };
+  }
+
+  factory ProductModel.fromMap(
+    Map<String, dynamic> map, [
+    int? variantIndex,
+  ]) {
     return ProductModel(
-      rating: map['rating'] is Map
-    ? Map<String, dynamic>.from(map['rating'])
-    : {},
-
       id: map['id']?.toString() ?? '',
       sellerId: map['sellerId']?.toString() ?? '',
       productName: map['ProductName']?.toString() ?? '',
@@ -82,26 +87,57 @@ final int expectedDeliveryDays;
       description: map['Description']?.toString() ?? '',
       category: map['Category']?.toString() ?? '',
       productType: map['Type']?.toString() ?? '',
-      connectivityOptions: map['ConnectivityOptions'] is List
-          ? List<String>.from(map['ConnectivityOptions'])
-          : [map['ConnectivityOptions'].toString()],
+
+      connectivityOptions:
+          map['ConnectivityOptions'] is List
+              ? List<String>.from(
+                  map['ConnectivityOptions'],
+                )
+              : [],
+
       warranty: map['Warranty']?.toString() ?? '',
       weight: map['Weight']?.toString(),
       size: map['SizeDimensions']?.toString() ?? '',
       tag: map['TagsKeywords']?.toString() ?? '',
-      manufactureDate: map['ManufactureDate']?.toString() ?? '',
-      addedDate: map['AddedDate']?.toString() ?? '',
+
+    
+      manufactureDate:
+          map['ManufactureDate'] != null
+              ? (map['ManufactureDate'] as Timestamp)
+                  .toDate()
+              : DateTime.now(),
+
+      addedDate:
+          map['AddedDate'] != null
+              ? (map['AddedDate'] as Timestamp)
+                  .toDate()
+              : DateTime.now(),
+
       status: map['status']?.toString() ?? '',
-      imges: map['Productimages'] is List
-          ? List<String>.from(map['Productimages'])
-          : [map['Productimages'].toString()],
-      variants: map['Variant'] is List
-          ? List<Map<String, dynamic>>.from(map['Variant'])
-          : (map['Variant'] is List
-              ? List<Map<String, dynamic>>.from(map['Variant'])
-              : []),
-              expectedDeliveryDays: map['expectedDeliveryDays'],
-              
+
+      imges:
+          map['Productimages'] is List
+              ? List<String>.from(
+                  map['Productimages'],
+                )
+              : [],
+
+      rating:
+          map['rating'] is Map
+              ? Map<String, dynamic>.from(
+                  map['rating'],
+                )
+              : {},
+
+      variants:
+          map['Variant'] is List
+              ? List<Map<String, dynamic>>.from(
+                  map['Variant'],
+                )
+              : [],
+
+      expectedDeliveryDays:
+          map['expectedDeliveryDays'] ?? 0,
     );
   }
 }

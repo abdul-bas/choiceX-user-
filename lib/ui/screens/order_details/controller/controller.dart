@@ -12,7 +12,7 @@ abstract class OrderDetailLogic {
       order.itemStatus == 'Delivered';
 
   static bool isCancelledState(OrderModel order, bool isCancelled) =>
-      isCancelled || order.cancellationReason != null;
+      isCancelled && order.cancellationReason != null;
 
   static bool isArrivingToday(String expectedDeliveryDate, String today) =>
       expectedDeliveryDate == today;

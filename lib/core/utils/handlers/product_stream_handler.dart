@@ -12,9 +12,7 @@ dynamic streamHandler(
     return const Center(child: Text('Something went wrong'));
   }
 
-  if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-    return const Center(child: Text('No products found'));
-  }
+ 
 
   return null;
 }

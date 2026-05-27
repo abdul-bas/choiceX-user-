@@ -7,7 +7,6 @@ import 'package:coice/ui/screens/chat/chat/widgets/empty_state.dart';
 import 'package:coice/ui/screens/chat/messages/message_screen.dart';
 import 'package:flutter/material.dart';
 
-
 class UserChatScreen extends StatelessWidget {
   const UserChatScreen({super.key});
 
@@ -29,31 +28,30 @@ class UserChatScreen extends StatelessWidget {
           );
         }
 
-        final chats = snapshot.data!
-            .map((d) => ChatModel.fromMap(d.data()))
-            .toList();
+        final chats =
+            snapshot.data!.map((d) => ChatModel.fromMap(d.data())).toList();
 
         return ListView.separated(
           itemCount: chats.length,
           separatorBuilder: (_, __) => const Divider(
             height: 1,
-            color: AppColors.grey200,               
+            color: AppColors.grey200,
           ),
           itemBuilder: (context, index) {
             final chat = chats[index];
             return ChatListItem(
               chat: chat,
               onTap: () {
-                 ChatRepository().markAsRead(chat.chatId);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => ChatScreen(
-          sellerId: chat.sellerId,
-          chatId: chat.chatId,
-        ),
-      ),
-    );
+                ChatRepository().markAsRead(chat.chatId);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => ChatScreen(
+                      sellerId: chat.sellerId,
+                      chatId: chat.chatId,
+                    ),
+                  ),
+                );
               },
             );
           },

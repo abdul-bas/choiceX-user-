@@ -1,3 +1,4 @@
+import 'package:coice/core/utils/helpers/get_formatted_date.dart';
 import 'package:coice/data/models/prodect_model.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +58,7 @@ class WishlistController extends ChangeNotifier {
             e.category.toLowerCase().contains(q) ||
             e.description.toLowerCase().contains(q) ||
             e.model.toLowerCase().contains(q) ||
-            e.addedDate.toLowerCase().contains(q);
+           getFormattedDate(e.addedDate).toLowerCase().contains(q);
 
         if (match) {
           filterFavoritesList.add(e);

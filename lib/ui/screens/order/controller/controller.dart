@@ -1,6 +1,7 @@
 import 'package:coice/data/models/order_model.dart';
 import 'package:coice/data/remote/firebase_service.dart';
 import 'package:coice/data/repository/auth_repository.dart';
+import 'package:coice/data/repository/order_repository.dart';
 import 'package:coice/ui/screens/cart/my_cart.dart';
 import 'package:coice/ui/screens/order/my_orders.dart';
 import 'package:coice/ui/screens/order_details/order_detail_screen.dart';
@@ -62,4 +63,5 @@ class OrderController {
       (route) => false,
     );
   }
+  
 }

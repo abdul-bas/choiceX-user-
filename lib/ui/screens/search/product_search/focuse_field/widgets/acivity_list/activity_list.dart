@@ -1,11 +1,9 @@
-
-
-
 import 'package:coice/data/models/prodect_model.dart';
 import 'package:coice/ui/screens/search/controller/controller.dart';
 import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_item.dart';
 
 import 'package:flutter/material.dart';
+
 Widget buildActivityList(
   BuildContext context,
   List<Map<String, dynamic>> activity,
@@ -15,40 +13,35 @@ Widget buildActivityList(
     physics: const NeverScrollableScrollPhysics(),
     shrinkWrap: true,
     itemCount: activity.length,
-    separatorBuilder: (_, __) =>
-        const SizedBox(height: 10),
+    separatorBuilder: (_, __) => const SizedBox(height: 10),
     itemBuilder: (context, index) {
       final data = activity[index];
 
-      final product =
-          SearchLogic.getProduct(products: 
-       products,
+      final product = SearchLogic.getProduct(
+        products: products,
         item: data,
       );
+      if (product == null) {
+        return SizedBox();
+      }
+      final int variantIndex = SearchLogic.getVariantIndex(data);
 
-      final variantIndex =
-          SearchLogic.getVariantIndex(data);
-
-      final bytes =
-          SearchLogic.decodeImage(
+      final bytes = SearchLogic.decodeImage(
         product,
         variantIndex,
       );
 
-      final discountedPrice =
-          SearchLogic.getDiscountedPrice(
+      final discountedPrice = SearchLogic.getDiscountedPrice(
         product: product,
         variantIndex: variantIndex,
       );
 
-      final discount =
-          SearchLogic.getDiscount(
+      final discount = SearchLogic.getDiscount(
         product: product,
         variantIndex: variantIndex,
       );
 
-      final hasDiscount =
-          SearchLogic.hasDiscount(
+      final hasDiscount = SearchLogic.hasDiscount(
         discount,
       );
 

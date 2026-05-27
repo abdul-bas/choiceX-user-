@@ -54,16 +54,29 @@ class OrderRepository {
 
     return snapshot.docs.isNotEmpty;
   }
+Stream<Map<String, dynamic>?> watchOrderExists(
+  String orderId,
+) {
+  return FirebaseFirestore.instance
+      .collection('return_and_refund')
+      .where('orderId', isEqualTo: orderId)
+      .limit(1)
+      .snapshots()
+      .map((snapshot) {
+        if (snapshot.docs.isEmpty) {
+          return null;
+        }
 
-   getRefundStatus(String orderId)  {
-   return  FirebaseFirestore.instance
+        return snapshot.docs.first.data();
+      });
+}
+
+  getRefundStatus(String orderId) {
+    return FirebaseFirestore.instance
         .collection('return_and_refund')
         .where('orderId', isEqualTo: orderId)
         .limit(1)
         .snapshots();
-    
-
-   
   }
 
   Future<OrderBlocState> updateRequest(String orderId) async {

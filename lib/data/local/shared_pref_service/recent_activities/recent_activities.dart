@@ -11,8 +11,8 @@ class RecentActivities {
       if (!recentList.contains(newActivity)) {
         recentList.insert(0, newActivity);
       }
-      if (recentList.length > 10) {
-        recentList = recentList.take(10).toList();
+      if (recentList.length > 5) {
+        recentList = recentList.take(5).toList();
       }
       await pref.setStringList('RecentActivities', recentList);
      

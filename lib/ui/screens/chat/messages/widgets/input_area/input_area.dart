@@ -47,7 +47,7 @@ Widget messageInputArea(
                               enableGesture: false,
                               size: Size(
                                   MediaQuery.of(context).size.width - 10, 45),
-                              recorderController: p.recorderController,
+                              recorderController: p.audioRecorder,
                               waveStyle: const WaveStyle(
                                 waveColor: AppColors.white,
                                 extendWaveform: true,
@@ -99,7 +99,7 @@ Widget messageInputArea(
                   ),
                   const SizedBox(width: 8),
 
-                  // Send / mic button
+                 
                   ValueListenableBuilder<bool>(
                     valueListenable: isFocus,
                     builder: (context, focused, _) {

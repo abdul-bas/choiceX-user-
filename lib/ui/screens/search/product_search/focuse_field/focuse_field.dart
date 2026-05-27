@@ -5,6 +5,7 @@ import 'package:coice/state/bloc/recent_search/recent_search_bloc.dart';
 import 'package:coice/state/bloc/recent_search/recent_search_event.dart';
 import 'package:coice/state/bloc/recent_search/recent_search_state.dart';
 import 'package:coice/ui/screens/product/widget/section_label/build_section_label.dart';
+import 'package:coice/ui/screens/search/controller/controller.dart';
 import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_list.dart';
 import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/recent_searches/recent_searches.dart';
 import 'package:coice/ui/screens/search/product_search/widgets/product_column_widget/product_column_widget.dart';
@@ -24,15 +25,17 @@ class FocuseField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<RecentSearchBloc>().add(RecentSearchGet());
-    
+
     return BlocBuilder<RecentSearchBloc, RecentSearchState>(
       builder: (context, state) {
         List<String> searchs = [];
         List<Map<String, dynamic>> activity = [];
+        List<ProductModel> newProdcuts = products;
 
         if (state is RecentSearchLoaded) {
           searchs = state.searches;
           activity = state.activities;
+     newProdcuts=     SearchLogic.findExptionProduct(products, activity);
         }
 
         return SingleChildScrollView(
@@ -49,15 +52,15 @@ class FocuseField extends StatelessWidget {
                 const SizedBox(height: 12),
                 buildActivityList(context, activity, products),
               ],
-              buildSectionLabel('products'),
+        if(newProdcuts.isNotEmpty)      buildSectionLabel('products'),
               const SizedBox(height: 12),
               ListView.builder(
                 shrinkWrap: true,
-                itemCount: products.length,
+                itemCount: newProdcuts.length,
                 itemBuilder: (context, index) {
-                  final product = products[index];
+                  final product = newProdcuts[index];
                   return ProductColumnWidget(
-                      data: product, bytes: base64Decode(product.imges[0]));
+                      data: product, bytes: base64Decode(product.imges.first));
                 },
               )
             ],

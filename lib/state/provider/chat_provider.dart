@@ -19,14 +19,14 @@ import 'package:uuid/uuid.dart';
 
 class ChatProvider extends ChangeNotifier {
   final AuthRepository _auth = AuthRepository();
-  final AudioRecorder audioRecorder = AudioRecorder();
+  
 
   int? currentIndex;
 
   final ScrollController scrollController = ScrollController();
   final TextEditingController searchCtrl = TextEditingController();
   final TextEditingController messageCtrl = TextEditingController();
-  final RecorderController recorderController =
+  final RecorderController audioRecorder =
     RecorderController();
 
   final List<QueryDocumentSnapshot<Map<String, dynamic>>> messages = [];
@@ -201,7 +201,7 @@ class ChatProvider extends ChangeNotifier {
 
   if (isRecording) {
 
-    await recorderController.stop();
+    await audioRecorder.stop();
 
     final path = await audioRecorder.stop();
 
@@ -216,7 +216,7 @@ class ChatProvider extends ChangeNotifier {
 
   } else {
 
-    if (!await audioRecorder.hasPermission()) return;
+   
 
     isRecording = true;
 
@@ -224,12 +224,9 @@ class ChatProvider extends ChangeNotifier {
         ? 'voice_${DateTime.now().millisecondsSinceEpoch}.m4a'
         : '${(await getTemporaryDirectory()).path}/voice_${DateTime.now().millisecondsSinceEpoch}.m4a';
 
-    await audioRecorder.start(
-      const RecordConfig(),
-      path: path,
-    );
+    
 
-    await recorderController.record();
+    await audioRecorder.record(path: path);
   }
 
   notifyListeners();

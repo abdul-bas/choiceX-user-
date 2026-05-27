@@ -13,7 +13,7 @@ List<ProductModel> getSimularProduct({
  
   products.sort(
     (a, b) =>
-        DateTime.parse(b.addedDate).compareTo(DateTime.parse(a.addedDate)),
+  a.addedDate.compareTo(b.addedDate),
   );
 
   for (final pro in products) {
@@ -21,8 +21,8 @@ List<ProductModel> getSimularProduct({
     if (pro.id == product.id) continue;
 
     if (pro.category == product.category) {
-      final proDate = DateTime.parse(pro.addedDate);
-      final productDate = DateTime.parse(product.addedDate);
+      final proDate = pro.addedDate;
+      final productDate = product.addedDate;
 
       if (proDate.isAfter(productDate) ||
           proDate.isAtSameMomentAs(productDate)) {

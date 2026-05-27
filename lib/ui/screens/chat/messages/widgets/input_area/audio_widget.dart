@@ -42,13 +42,15 @@ class AudioWidget extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 8, vertical: 10),
-                child: WaveBarsSimple(
-                  heights: inputBarAudioHight,
-                  progress: progress,
-                  played: AppColors.black,            
-                  dim: AppColors.white,                 
-                  animated: true,
+                    horizontal: 3, vertical: 10),
+                child: Flexible(
+                  child: WaveBarsSimple(
+                    heights: inputBarAudioHight,
+                    progress: progress,
+                    played: AppColors.black,            
+                    dim: AppColors.white,                 
+                    animated: true,
+                  ),
                 ),
               ),
               IconButton(

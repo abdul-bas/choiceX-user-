@@ -7,7 +7,7 @@ import 'package:coice/ui/screens/order/dialogs/widgets/journey_timeline.dart';
 import 'package:flutter/material.dart';
 
   Widget buildStatusDialogBody(
-      StatusConfig cfg, bool isRejected, BuildContext context) {
+      StatusConfig cfg, bool isRejected, BuildContext context,{required String orderId}) {
     return Container(
       color: isRejected
           ? AppColors.surfaceError                     
@@ -50,7 +50,7 @@ import 'package:flutter/material.dart';
 
           buildInfoCard(cfg, isRejected),
           const SizedBox(height: 24),
-        buildButton(cfg, context),
+        buildButton(cfg, context,orderId: orderId),
         ],
       ),
     );

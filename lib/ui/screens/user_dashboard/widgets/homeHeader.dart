@@ -2,6 +2,7 @@ import 'package:coice/core/constants/app_colors/app_colors.dart';
 import 'package:coice/core/routes/push_function.dart';
 import 'package:coice/state/provider/home_controller.dart';
 import 'package:coice/ui/screens/cart/my_cart.dart';
+import 'package:coice/ui/screens/home/controller/controller.dart';
 import 'package:coice/ui/screens/more/notifications/notifications.dart';
 import 'package:coice/ui/screens/search/chat_search/chat_search_screen.dart';
 import 'package:coice/ui/screens/search/favorite_search/favorite_search_screen.dart';
@@ -23,18 +24,43 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(fontSize: 26, fontWeight: FontWeight.w900),
       ),
       actions: [
-        IconButton(
-          icon: Icon(Icons.shopping_cart_outlined),
-          onPressed: () {
-            pushScreen(context, MyCartPage());
-          },
-        ),
-        IconButton(
-          icon: const Icon(Icons.notifications_outlined),
-          onPressed: () {
-            pushScreen(context, NotificationsScreen());
-          },
-        ),
+        StreamBuilder(
+            stream: HomeLogic.authRepository.cartCountStream(),
+            builder: (context, asyncSnapshot) {
+              final data = asyncSnapshot.data;
+              return IconButton(
+                icon: Badge(
+                  isLabelVisible: data != null && data > 0,
+                  backgroundColor: AppColors.deleteRed,
+                  textColor: AppColors.white,
+                  label: Text('$data'),
+                  child: Icon(
+                    Icons.shopping_cart_outlined,
+                  ),
+                ),
+                onPressed: () {
+                  HomeLogic.authRepository.clearCartCount();
+                  pushScreen(context, MyCartPage());
+                },
+              );
+            }),
+        StreamBuilder(
+            stream: HomeLogic.notificationRepository.notificationCountStream(),
+            builder: (context, asyncSnapshot) {
+              final data = asyncSnapshot.data;
+              return IconButton(
+                icon: Badge(
+                    isLabelVisible: data != null && data > 0,
+                    backgroundColor: AppColors.deleteRed,
+                    textColor: AppColors.white,
+                    label: Text('$data'),
+                    child: Icon(Icons.notifications_outlined)),
+                onPressed: () async{
+               await   HomeLogic.notificationRepository.clearNotificationCount();
+                  pushScreen(context, NotificationsScreen());
+                },
+              );
+            }),
         const SizedBox(width: 8),
       ],
       bottom: PreferredSize(

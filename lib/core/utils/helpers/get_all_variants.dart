@@ -6,6 +6,7 @@ List<Map<String, dynamic>> getAllVariant(List<ProductModel> products) {
     for (int variantIndex = 0;
         variantIndex < product.variants.length;
         variantIndex++) {
+          
       allVariant.add({'productId': product.id, 'variantIndex': variantIndex});
     }
   }
@@ -14,7 +15,7 @@ List<Map<String, dynamic>> getAllVariant(List<ProductModel> products) {
 
 List<Map<String, dynamic>> getRecentVariants(List<ProductModel> products) {
   products.sort((a, b) =>
-      parseDate(b.addedDate).compareTo(parseDate(a.addedDate)));
+      a.addedDate.compareTo(b.addedDate));
 
   List<Map<String, dynamic>> allVariant = [];
 

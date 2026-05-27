@@ -441,8 +441,11 @@ class AuthRepository {
           _firestore.collection('cart').doc(user.uid).collection('items');
 
       final existingItem = await cartCollection
-          .where('productId', isEqualTo: cart.productId,)
-          .where('variantIndex',isEqualTo: cart.variantIndex)
+          .where(
+            'productId',
+            isEqualTo: cart.productId,
+          )
+          .where('variantIndex', isEqualTo: cart.variantIndex)
           .limit(1)
           .get();
 
@@ -466,6 +469,7 @@ class AuthRepository {
           ...cart.toMap(),
           'quantity': 1,
         });
+        await _firestore.collection('cart').doc('count').set({'count':FieldValue.increment(1)},SetOptions(merge: true));
 
         return CartSuccessfullyAdded(
           message: "Product added to cart successfully",
@@ -478,116 +482,88 @@ class AuthRepository {
       return FavoriteError(message: "Failed to update cart: $e");
     }
   }
+   Stream<int> cartCountStream() {
+  return _firestore
+      .collection('cart')
+      .doc('count')
+      .snapshots()
+      .map((snapshot) {
+    if (!snapshot.exists) return 0;
+
+    return snapshot.data()?['count'] ?? 0;
+  });
+}
+Future<void> clearCartCount() async {
+  await _firestore
+      .collection('cart')
+      .doc('count')
+      .set({
+    'count': 0,
+  },SetOptions(merge: true));
+}
   Future<AuthState> incrementQuantity({
-  required String productId,
-  required int variantIndex,
-}) async {
-  try {
-    final user = _auth.currentUser;
+    required String productId,
+    required int variantIndex,
+  }) async {
+    try {
+      final user = _auth.currentUser;
 
-    if (user == null) {
-      return FavoriteError(message: "User not logged in");
+      if (user == null) {
+        return FavoriteError(message: "User not logged in");
+      }
+
+      final cartCollection =
+          _firestore.collection('cart').doc(user.uid).collection('items');
+
+      final query = await cartCollection
+          .where('productId', isEqualTo: productId)
+          .where('variantIndex', isEqualTo: variantIndex)
+          .limit(1)
+          .get();
+
+      if (query.docs.isNotEmpty) {
+        final doc = query.docs.first;
+
+        await doc.reference.update({
+          'quantity': FieldValue.increment(1),
+        });
+
+        return CartSuccessfullyAdded(
+          message: "Quantity increased",
+          productName: "",
+          price: "",
+          addedTime: DateTime.now(),
+        );
+      }
+
+      return FavoriteError(message: "Item not found");
+    } catch (e) {
+      return FavoriteError(message: "Error: $e");
     }
-
-    final cartCollection = _firestore
-        .collection('cart')
-        .doc(user.uid)
-        .collection('items');
-
-    final query = await cartCollection
-        .where('productId', isEqualTo: productId)
-        .where('variantIndex', isEqualTo: variantIndex)
-        .limit(1)
-        .get();
-
-    if (query.docs.isNotEmpty) {
-      final doc = query.docs.first;
-
-      await doc.reference.update({
-        'quantity': FieldValue.increment(1),
-      });
-
-      return CartSuccessfullyAdded(
-        message: "Quantity increased",
-        productName: "",
-        price: "",
-        addedTime: DateTime.now(),
-      );
-    }
-
-    return FavoriteError(message: "Item not found");
-  } catch (e) {
-    return FavoriteError(message: "Error: $e");
   }
-}
-Future<AuthState> deleteCartItem({
-  required String productId,
-  required int variantIndex,
-}) async {
-  try {
-    final user = _auth.currentUser;
 
-    if (user == null) {
-      return FavoriteError(message: "User not logged in");
-    }
+  Future<AuthState> deleteCartItem({
+    required String productId,
+    required int variantIndex,
+  }) async {
+    try {
+      final user = _auth.currentUser;
 
-    final cartCollection = _firestore
-        .collection('cart')
-        .doc(user.uid)
-        .collection('items');
+      if (user == null) {
+        return FavoriteError(message: "User not logged in");
+      }
 
-    final query = await cartCollection
-        .where('productId', isEqualTo: productId)
-        .where('variantIndex', isEqualTo: variantIndex)
-        .limit(1)
-        .get();
+      final cartCollection =
+          _firestore.collection('cart').doc(user.uid).collection('items');
 
-    if (query.docs.isNotEmpty) {
-      await query.docs.first.reference.delete();
+      final query = await cartCollection
+          .where('productId', isEqualTo: productId)
+          .where('variantIndex', isEqualTo: variantIndex)
+          .limit(1)
+          .get();
 
-      return CartSuccessfullyAdded(
-        message: "Item removed from cart",
-        productName: "",
-        price: "",
-        addedTime: DateTime.now(),
-      );
-    }
-
-    return FavoriteError(message: "Item not found");
-  } catch (e) {
-    return FavoriteError(message: "Failed to delete item: $e");
-  }
-}
-
-  Future<AuthState> decrementQuantity({
-  required String productId,
-  required int variantIndex,
-}) async {
-  try {
-    final user = _auth.currentUser;
-
-    if (user == null) {
-      return FavoriteError(message: "User not logged in");
-    }
-
-    final cartCollection = _firestore
-        .collection('cart')
-        .doc(user.uid)
-        .collection('items');
-
-    final query = await cartCollection
-        .where('productId', isEqualTo: productId)
-        .where('variantIndex', isEqualTo: variantIndex)
-        .limit(1)
-        .get();
-
-    if (query.docs.isNotEmpty) {
-      final doc = query.docs.first;
-      final currentQty = doc['quantity'] ?? 1;
-
-      if (currentQty <= 1) {
-     
-        await doc.reference.delete();
+      if (query.docs.isNotEmpty) {
+        await query.docs.first.reference.delete();
 
         return CartSuccessfullyAdded(
           message: "Item removed from cart",
@@ -595,96 +571,135 @@ Future<AuthState> deleteCartItem({
           price: "",
           addedTime: DateTime.now(),
         );
-      } else {
-        await doc.reference.update({
-          'quantity': FieldValue.increment(-1),
-        });
-
-        return CartSuccessfullyAdded(
-          message: "Quantity decreased",
-          productName: "",
-          price: "",
-          addedTime: DateTime.now(),
-        );
       }
+
+      return FavoriteError(message: "Item not found");
+    } catch (e) {
+      return FavoriteError(message: "Failed to delete item: $e");
     }
-
-    return FavoriteError(message: "Item not found");
-  } catch (e) {
-    return FavoriteError(message: "Error: $e");
-  }
-}
-Future<double> getCartSubTotal() async {
-  final user = _auth.currentUser;
-
-  if (user == null) {
-    return 0.0;
   }
 
-  final cartCollection = _firestore
-      .collection('cart')
-      .doc(user.uid)
-      .collection('items');
+  Future<AuthState> decrementQuantity({
+    required String productId,
+    required int variantIndex,
+  }) async {
+    try {
+      final user = _auth.currentUser;
 
-  final snapshot = await cartCollection.get();
+      if (user == null) {
+        return FavoriteError(message: "User not logged in");
+      }
 
-  double subtotal = 0.0;
+      final cartCollection =
+          _firestore.collection('cart').doc(user.uid).collection('items');
 
-  for (var doc in snapshot.docs) {
-    final data = doc.data();
+      final query = await cartCollection
+          .where('productId', isEqualTo: productId)
+          .where('variantIndex', isEqualTo: variantIndex)
+          .limit(1)
+          .get();
 
-    final price = (data['discountPrice'] ?? 0).toDouble();
-    final qty = (data['quantity'] ?? 1);
+      if (query.docs.isNotEmpty) {
+        final doc = query.docs.first;
+        final currentQty = doc['quantity'] ?? 1;
 
-    subtotal += price * qty;
+        if (currentQty <= 1) {
+          await doc.reference.delete();
+
+          return CartSuccessfullyAdded(
+            message: "Item removed from cart",
+            productName: "",
+            price: "",
+            addedTime: DateTime.now(),
+          );
+        } else {
+          await doc.reference.update({
+            'quantity': FieldValue.increment(-1),
+          });
+
+          return CartSuccessfullyAdded(
+            message: "Quantity decreased",
+            productName: "",
+            price: "",
+            addedTime: DateTime.now(),
+          );
+        }
+      }
+
+      return FavoriteError(message: "Item not found");
+    } catch (e) {
+      return FavoriteError(message: "Error: $e");
+    }
   }
 
-  return subtotal;
-}
-
- Stream<QuerySnapshot<Map<String, dynamic>>> getCartItemsStream() {
-  final User? user = _auth.currentUser;
-
-  if (user == null) {
-    throw Exception("User not logged in");
-  }
-
-  return _firestore
-      .collection('cart')
-      .doc(user.uid)
-      .collection('items')
-      .snapshots();
-}
-
-  Future<AuthState> clearCart() async {
-  try {
+  Future<double> getCartSubTotal() async {
     final user = _auth.currentUser;
 
     if (user == null) {
-      return FavoriteError(message: "User not logged in");
+      return 0.0;
     }
 
-    final cartCollection = _firestore
-        .collection('cart')
-        .doc(user.uid)
-        .collection('items');
+    final cartCollection =
+        _firestore.collection('cart').doc(user.uid).collection('items');
 
     final snapshot = await cartCollection.get();
 
+    double subtotal = 0.0;
+
     for (var doc in snapshot.docs) {
-      await doc.reference.delete();
+      final data = doc.data();
+
+      final price = (data['discountPrice'] ?? 0).toDouble();
+      final qty = (data['quantity'] ?? 1);
+
+      subtotal += price * qty;
     }
 
-    return CartSuccessfullyAdded(
-      message: "Cart cleared successfully",
-      productName: "",
-      price: "",
-      addedTime: DateTime.now(),
-    );
-  } catch (e) {
-    return FavoriteError(message: "Failed to clear cart: $e");
+    return subtotal;
   }
-}
+
+  Stream<QuerySnapshot<Map<String, dynamic>>> getCartItemsStream() {
+    final User? user = _auth.currentUser;
+
+    if (user == null) {
+      throw Exception("User not logged in");
+    }
+
+    return _firestore
+        .collection('cart')
+        .doc(user.uid)
+        .collection('items')
+        .snapshots();
+  }
+
+  Future<AuthState> clearCart() async {
+    try {
+      final user = _auth.currentUser;
+
+      if (user == null) {
+        return FavoriteError(message: "User not logged in");
+      }
+
+      final cartCollection =
+          _firestore.collection('cart').doc(user.uid).collection('items');
+
+      final snapshot = await cartCollection.get();
+
+      for (var doc in snapshot.docs) {
+        await doc.reference.delete();
+      }
+
+      return CartSuccessfullyAdded(
+        message: "Cart cleared successfully",
+        productName: "",
+        price: "",
+        addedTime: DateTime.now(),
+      );
+    } catch (e) {
+      return FavoriteError(message: "Failed to clear cart: $e");
+    }
+  }
+
   Future<void> deleteCart() async {
     final user = _auth.currentUser;
     if (user == null) return;
@@ -914,50 +929,48 @@ Future<double> getCartSubTotal() async {
       return [];
     }
   }
-Future<AuthState> editProfile({
-  required UserModel updatedUser,
-}) async {
-  try {
-    final user = _auth.currentUser;
 
-    if (user == null) {
+  Future<AuthState> editProfile({
+    required UserModel updatedUser,
+  }) async {
+    try {
+      final user = _auth.currentUser;
+
+      if (user == null) {
+        return EditProfileFailure(
+          error: 'User not logged in',
+        );
+      }
+
+      if (user.email != updatedUser.email) {
+        await user.verifyBeforeUpdateEmail(
+          updatedUser.email,
+        );
+      }
+
+      final userRef = _firestore.collection('user').doc(user.uid);
+
+      await userRef.set({
+        'uid': user.uid,
+        'name': updatedUser.name,
+        'email': updatedUser.email,
+        'image': updatedUser.image,
+        'fcmToken': updatedUser.fcmToken,
+        'createdAt': updatedUser.createdAt.toIso8601String(),
+      }, SetOptions(merge: true));
+
+      return EditProfileSuccess();
+    } on FirebaseAuthException catch (e) {
       return EditProfileFailure(
-        error: 'User not logged in',
+        error: e.message ?? 'Profile update failed',
+      );
+    } catch (e) {
+      return EditProfileFailure(
+        error: e.toString(),
       );
     }
-
-    
-    if (user.email != updatedUser.email) {
-      await user.verifyBeforeUpdateEmail(
-        updatedUser.email,
-      );
-    }
-
-    final userRef =
-        _firestore.collection('user').doc(user.uid);
-
-    await userRef.set({
-      
-      'uid': user.uid,
-      'name': updatedUser.name,
-      'email': updatedUser.email,
-      'image': updatedUser.image,
-      'fcmToken': updatedUser.fcmToken,
-      'createdAt':
-          updatedUser.createdAt.toIso8601String(),
-    }, SetOptions(merge: true));
-
-    return EditProfileSuccess();
-  } on FirebaseAuthException catch (e) {
-    return EditProfileFailure(
-      error: e.message ?? 'Profile update failed',
-    );
-  } catch (e) {
-    return EditProfileFailure(
-      error: e.toString(),
-    );
   }
-}
+
   Future<AuthState> updatePassword({
     required String oldPassword,
     required String newPassword,
@@ -980,7 +993,7 @@ Future<AuthState> editProfile({
 
       return ChangePasswordSuccess();
     } on FirebaseAuthException catch (e) {
-     print('\nFirebaseAuthException: ${e.code}\n\n');
+      print('\nFirebaseAuthException: ${e.code}\n\n');
       return ChangePasswordFailure(
         error: e.message ?? 'Password update failed',
       );

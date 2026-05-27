@@ -6,7 +6,6 @@ import 'package:coice/ui/screens/home/widgets/header/header.dart';
 import 'package:coice/ui/common_widgets/all_product_variant_grid.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -15,11 +14,11 @@ class HomeScreen extends StatelessWidget {
 
   final List<ProductModel> products;
 
- 
   @override
   Widget build(BuildContext context) {
+   
     final newArrivals = HomeLogic.getNewArrivals(products);
- 
+
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -30,7 +29,8 @@ class HomeScreen extends StatelessWidget {
             HomeCategoriesSection(products: products),
             SectionHeader(
               title: 'New Arrivals',
-              onSeeAllTap: () => HomeLogic.navigateToNewArrivals(context, newArrivals),
+              onSeeAllTap: () =>
+                  HomeLogic.navigateToNewArrivals(context, newArrivals),
             ),
             AllProductVariantGrid(
               allVariant: HomeLogic.getLimitedVariants(newArrivals),

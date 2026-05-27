@@ -44,6 +44,8 @@ class AllProductVariantGrid extends StatelessWidget {
           childAspectRatio: 0.8,
         ),
         itemBuilder: (context, index) {
+           print(
+        '.................................${products.first.brand}...................');
           final item = allVariant[index];
           final variantIndex = item['variantIndex'];
           

@@ -103,7 +103,7 @@ void showReturnDialog(BuildContext context, OrderModel order) {
                             showDialog(
                               context: context,
                               builder: (context) =>
-                                  StatusUpdateDialog(newStatus: 'pending'),
+                                  StatusUpdateDialog(newStatus: 'pending',orderId: order.orderId,),
                             );
                           },
                         ),
