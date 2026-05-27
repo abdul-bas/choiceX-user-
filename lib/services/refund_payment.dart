@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future<bool> refundPayment(String paymentIntentId, double amountInRupees) async {
-  const secretKey = 'Removed stripe secret';
+  const secretKey = 'sk_test_51SYg0gImJBBi6PZm1lVkmH0I6exkFYuDmABuREoSHnerLLYXkJ1Z3GGk8VvLi50pfRJboOMV38TXRattX5ceRRSf00nYW1QrhA';
   final url = Uri.parse('https://api.stripe.com/v1/refunds');
 
   try {
