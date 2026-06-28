@@ -18,70 +18,67 @@ class ChatListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            const CircleAvatar(child: Icon(Icons.store)),
-            const SizedBox(width: 12),
-
+      child: Row(
+        children: [
+          const CircleAvatar(child: Icon(Icons.store)),
+          const SizedBox(width: 12),
       
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Seller ${chat.sellerId.substring(0, 6)}',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    chat.lastMessage.isEmpty
-                        ? 'No messages yet'
-                        : chat.lastMessage,
-                        
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: AppColors.grey600,    
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-          
-            Column(
+            
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  getFormatTime(chat.lastMessageTime),
+                  'Seller ${chat.sellerId.substring(0, 6)}',
                   style: const TextStyle(
-                    fontSize: 12,
-                    color: AppColors.grey500,    
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
                   ),
                 ),
-                if (chat.userUnreadCount >= 1)
-                  Container(
-                    padding: const EdgeInsets.all(6),
-                    decoration: const BoxDecoration(
-                      color: AppColors.danger,     
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      chat.userUnreadCount.toString(),
-                      style: const TextStyle(
-                        color: AppColors.white,  
-                        fontSize: 12,
-                      ),
-                    ),
+                const SizedBox(height: 4),
+                Text(
+                  chat.lastMessage.isEmpty
+                      ? 'No messages yet'
+                      : chat.lastMessage,
+                      
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    color: AppColors.grey600,    
                   ),
+                ),
               ],
             ),
-          ],
-        ),
+          ),
+      
+        
+          Column(
+            children: [
+              Text(
+                getFormatTime(chat.lastMessageTime),
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: AppColors.grey500,    
+                ),
+              ),
+              if (chat.userUnreadCount >= 1)
+                Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: const BoxDecoration(
+                    color: AppColors.danger,     
+                    shape: BoxShape.circle,
+                  ),
+                  child: Text(
+                    chat.userUnreadCount.toString(),
+                    style: const TextStyle(
+                      color: AppColors.white,  
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ],
       ),
     );
   }

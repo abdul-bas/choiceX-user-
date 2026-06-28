@@ -19,6 +19,7 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: AppColors.grey200,
       title: const Text(
         'Choice_X',
         style: TextStyle(fontSize: 26, fontWeight: FontWeight.w900),

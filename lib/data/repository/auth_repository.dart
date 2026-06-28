@@ -961,6 +961,7 @@ Future<void> clearCartCount() async {
 
       return EditProfileSuccess();
     } on FirebaseAuthException catch (e) {
+    
       return EditProfileFailure(
         error: e.message ?? 'Profile update failed',
       );

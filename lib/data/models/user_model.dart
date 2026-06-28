@@ -1,14 +1,12 @@
 
 
-import 'dart:io';
-
 class UserModel {
   String name;
   String email;
   String? uid;
   String password;
   String? fcmToken;
-  File? image;
+  String? image;
   DateTime createdAt;
 
   UserModel({
@@ -30,7 +28,7 @@ class UserModel {
       'fcmToken': fcmToken,
 
      
-      'image': image?.path,
+      'image': image,
 
       'createdAt': createdAt.toIso8601String(),
     };
@@ -47,9 +45,7 @@ class UserModel {
       fcmToken: map['fcmToken'],
 
       
-      image: map['image'] != null
-          ? File(map['image'])
-          : null,
+      image: map['image'],
 
       createdAt: map['createdAt'] != null
           ? DateTime.parse(map['createdAt'])

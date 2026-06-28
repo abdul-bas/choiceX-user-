@@ -153,7 +153,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     text: 'Sign Up With Google',       
                     function: () =>
                         AuthController.signInWithGoogle(context), 
-                    icon: Icon(
+                    icon: FaIcon(
                       FontAwesomeIcons.google,
                       color: AppColors.googleIcon,      
                       size: 25,
@@ -167,7 +167,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     text: 'Sign Up With Facebook',
                     function: () =>
                         AuthController.signInWithFacebook(context), 
-                    icon: Icon(
+                    icon: FaIcon(
                       FontAwesomeIcons.facebook,
                       color: AppColors.facebookBlue,   
                       size: 25,

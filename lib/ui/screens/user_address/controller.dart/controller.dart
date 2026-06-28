@@ -27,17 +27,19 @@ class AddressController {
     return '${text[0].toUpperCase()}${text.substring(1).toLowerCase()}';
   }
 
-   String? validatePhone(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return 'Please enter a phone number';
-    }
-
-    if (value.trim().length < 10) {
-      return 'Enter a valid phone number';
-    }
-
-    return null;
+  String? validatePhone(String? value) {
+  if (value == null || value.trim().isEmpty) {
+    return 'Please enter a phone number';
   }
+
+  final phone = value.trim();
+
+  if (!RegExp(r'^[0-9]{10}$').hasMatch(phone)) {
+    return 'Enter a valid 10-digit phone number';
+  }
+
+  return null;
+}
 
    String? validateLocation(String? value) {
     if (value == null || value.trim().isEmpty) {

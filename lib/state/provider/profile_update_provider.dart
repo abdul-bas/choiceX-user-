@@ -34,7 +34,9 @@ class EditProfileProvider extends ChangeNotifier {
   void setUser(UserModel user) {
     userNameController.text = user.name;
     emailController.text = user.email;
-    _pickedImage = user.image;
+    
+
+_pickedImage = user.image != null ? File(user.image!) : null;
     notifyListeners();
   }
 
@@ -51,7 +53,7 @@ class EditProfileProvider extends ChangeNotifier {
               name: name,
               email: email,
               password: user.password,
-              image: _pickedImage ?? user.image,
+              image: _pickedImage?.path??user.image,
               fcmToken: user.fcmToken,
               createdAt: user.createdAt,
             ),

@@ -1,12 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
+
 import 'package:coice/data/models/chat/chat_model.dart';
 import 'package:coice/data/repository/chat_repository.dart';
 import 'package:coice/ui/screens/chat/chat/widgets/chat_list_item.dart';
 import 'package:coice/ui/screens/chat/chat/widgets/empty_state.dart';
 import 'package:coice/ui/screens/chat/messages/message_screen.dart';
 import 'package:flutter/material.dart';
-
 class UserChatScreen extends StatelessWidget {
   const UserChatScreen({super.key});
 
@@ -28,14 +27,17 @@ class UserChatScreen extends StatelessWidget {
           );
         }
 
-        final chats =
-            snapshot.data!.map((d) => ChatModel.fromMap(d.data())).toList();
+        final chats = snapshot.data!
+            .map((d) => ChatModel.fromMap(d.data()))
+            .toList();
 
         return ListView.separated(
+          padding: const EdgeInsets.fromLTRB(15, 20, 15, 10),
           itemCount: chats.length,
           separatorBuilder: (_, __) => const Divider(
             height: 1,
-            color: AppColors.grey200,
+            indent: 72,
+            endIndent: 16,
           ),
           itemBuilder: (context, index) {
             final chat = chats[index];

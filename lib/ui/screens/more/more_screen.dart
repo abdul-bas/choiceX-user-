@@ -1,5 +1,7 @@
 
 
+import 'dart:io';
+
 import 'package:coice/core/constants/app_colors/app_colors.dart';
 import 'package:coice/core/utils/utils/snapshot_helper.dart';
 import 'package:coice/ui/common_widgets/custom_text_button.dart';
@@ -92,7 +94,12 @@ class MoreScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
                         width: 130, height: 130,
-                        decoration: BoxDecoration(
+                        decoration: BoxDecoration(  image: currentUser.image != null
+                ? DecorationImage(
+                    image: FileImage(File(currentUser.image!)),
+                    fit: BoxFit.cover,
+                  )
+                : null,
                           color: AppColors.surfaceWhite,
                           shape: BoxShape.circle,
                           border: Border.all(
@@ -106,16 +113,18 @@ class MoreScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        child: Center(
-                          child: Text(
-                            currentUser.name.isNotEmpty ? currentUser.name[0] : '',
-                            style: TextStyle(
-                              fontSize: 48,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.brand,  
-                            ),
-                          ),
-                        ),
+                        child:currentUser.image == null
+              ? Center(
+                  child: Text(
+                    currentUser.name.isNotEmpty ? currentUser.name[0] : '',
+                    style: TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.brand,
+                    ),
+                  ),
+                )
+              : null,
                       ),
                     ),
                     const SizedBox(height: 20),
@@ -237,11 +246,5 @@ class MoreScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
 
 

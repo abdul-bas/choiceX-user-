@@ -32,7 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.grey300,
+      backgroundColor: AppColors.grey200,
       appBar: const HomeHeader(),
       body: StreamBuilder(
         stream: UiDetailsGet().productGet(),

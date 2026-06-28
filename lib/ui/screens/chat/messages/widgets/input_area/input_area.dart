@@ -11,7 +11,6 @@ import 'package:flutter/foundation.dart' as foundation;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 Widget messageInputArea(
   BuildContext context,
   ValueNotifier<bool> isFocus,
@@ -24,7 +23,6 @@ Widget messageInputArea(
   return SafeArea(
     child: Consumer<ChatProvider>(
       builder: (context, p, child) {
-        if (p.audioPath != null) AudioPreviewBar(ctrl: p);
         return Column(
           children: [
             Padding(
@@ -34,7 +32,7 @@ Widget messageInputArea(
                   Expanded(
                     child: Selector<ChatProvider, String?>(
                       selector: (context, provider) => provider.audioPath,
-                      builder: (context, value, child) {
+                      builder: (context, audioPath, child) {
                         if (p.isRecording) {
                           return Container(
                             height: 45,
@@ -46,7 +44,9 @@ Widget messageInputArea(
                             child: AudioWaveforms(
                               enableGesture: false,
                               size: Size(
-                                  MediaQuery.of(context).size.width - 10, 45),
+                                MediaQuery.of(context).size.width - 10,
+                                45,
+                              ),
                               recorderController: p.audioRecorder,
                               waveStyle: const WaveStyle(
                                 waveColor: AppColors.white,
@@ -58,9 +58,11 @@ Widget messageInputArea(
                             ),
                           );
                         }
-                        if (value != null) {
-                          return AudioWidget(path: value);
+
+                        if (audioPath != null) {
+                          return AudioWidget(path: audioPath);
                         }
+
                         return Container(
                           padding: const EdgeInsets.symmetric(horizontal: 5),
                           decoration: BoxDecoration(
@@ -99,59 +101,80 @@ Widget messageInputArea(
                   ),
                   const SizedBox(width: 8),
 
-                 
-                  ValueListenableBuilder<bool>(
-                    valueListenable: isFocus,
-                    builder: (context, focused, _) {
-                      final isSend = focused ||
-                          p.fileUpload != null ||
-                          p.audioPath != null;
-                      return IconButton(
-                        padding: EdgeInsets.zero,
-                        onPressed: () {
-                          if (!isSend) p.handleMicTap();
-                          if (isSend) {
-                            sendMessage(
-                              context,
-                              p.messageCtrl,
-                              product,
-                              variantIndex,
-                              chatId,
-                              sellerId,
-                              isFocus,
-                              scrollController,
-                              p.audioPath,
-                              p.fileUpload,
-                              isSend,
-                              () {
-                                if (p.fileUpload != null) {
-                                  p.removeFile();
-                                }
-                                if (p.audioPath != null) {
-                                  p.discardAudio();
-                                }
-                              },
-                            );
-                          }
+           
+                  Selector<ChatProvider, (bool, String?, dynamic)>(
+                    selector: (context, provider) => (
+                      provider.isRecording,
+                      provider.audioPath,
+                      provider.fileUpload,
+                    ),
+                    builder: (context, state, _) {
+                      final (isRecording, audioPath, fileUpload) = state;
+
+                      return ValueListenableBuilder<bool>(
+                        valueListenable: isFocus,
+                        builder: (context, focused, _) {
+                          final isSend = focused ||
+                              fileUpload != null ||
+                              audioPath != null;
+
+                      
+                          final bool showSend = isSend && !isRecording;
+                          final bool isActive = isSend || isRecording;
+
+                          return IconButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {
+                              if (isRecording) {
+                              
+                                p.handleMicTap();
+                                return;
+                              }
+                              if (isSend) {
+                                sendMessage(
+                                  context,
+                                  p.messageCtrl,
+                                  product,
+                                  variantIndex,
+                                  chatId,
+                                  sellerId,
+                                  isFocus,
+                                  scrollController,
+                                  audioPath,
+                                  fileUpload,
+                                  isSend,
+                                  () {
+                                    if (fileUpload != null) p.removeFile();
+                                    if (audioPath != null) p.discardAudio();
+                                  },
+                                );
+                              } else {
+                               
+                                p.handleMicTap();
+                              }
+                            },
+                            icon: Container(
+                              width: 46,
+                              height: 46,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: isActive
+                                    ? AppColors.brand
+                                    : AppColors.brand.withValues(alpha: 0.1),
+                              ),
+                              child: Icon(
+                                isRecording
+                                    ? Icons.stop_rounded    
+                                    : showSend
+                                        ? Icons.send_rounded  
+                                        : Icons.mic_none_rounded, 
+                                color: isActive
+                                    ? AppColors.white
+                                    : AppColors.grey400,
+                              ),
+                            ),
+                          );
                         },
-                        icon: Container(
-                          width: 46,
-                          height: 46,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: isSend || p.isRecording
-                                ? AppColors.brand
-                                : AppColors.brand.withValues(alpha: 0.1),
-                          ),
-                          child: Icon(
-                            isSend
-                                ? Icons.send_rounded
-                                : Icons.mic_none_rounded,
-                            color: isSend || p.isRecording
-                                ? AppColors.white
-                                : AppColors.grey400,
-                          ),
-                        ),
                       );
                     },
                   ),
@@ -189,9 +212,11 @@ Widget messageInputArea(
                         top: EmojiPickerItem.searchBar,
                       ),
                       skinToneConfig: SkinToneConfig(
-                          dialogBackgroundColor: AppColors.brand),
+                        dialogBackgroundColor: AppColors.brand,
+                      ),
                       categoryViewConfig: CategoryViewConfig(
-                        backgroundColor: AppColors.brand.withValues(alpha: 0.1),
+                        backgroundColor:
+                            AppColors.brand.withValues(alpha: 0.1),
                         iconColor: AppColors.brand.withValues(alpha: 0.3),
                         iconColorSelected: AppColors.brand,
                         indicatorColor: AppColors.brand,

@@ -13,21 +13,19 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:record/record.dart';
 import 'package:uuid/uuid.dart';
-
 class ChatProvider extends ChangeNotifier {
   final AuthRepository _auth = AuthRepository();
-  
 
   int? currentIndex;
 
   final ScrollController scrollController = ScrollController();
   final TextEditingController searchCtrl = TextEditingController();
   final TextEditingController messageCtrl = TextEditingController();
-  final RecorderController audioRecorder =
-    RecorderController();
+  final RecorderController audioRecorder = RecorderController();
 
   final List<QueryDocumentSnapshot<Map<String, dynamic>>> messages = [];
 
@@ -40,7 +38,7 @@ class ChatProvider extends ChangeNotifier {
 
   bool isRecording = false;
   String? audioPath;
-  String? fileUpload;
+  String? fileUploadBase64; 
   bool isFileUploadVisible = false;
   bool hasMessage = false;
   bool showEmoji = false;
@@ -50,6 +48,9 @@ class ChatProvider extends ChangeNotifier {
   static const int _pageSize = 20;
 
   String get userId => _auth.getUeserId();
+
+  
+  String? get fileUpload => fileUploadBase64;
 
   ChatProvider() {
     _init();
@@ -82,8 +83,9 @@ class ChatProvider extends ChangeNotifier {
   }
 
   void _syncSendState() {
-    final next =
-        messageCtrl.text.isNotEmpty || fileUpload != null || audioPath != null;
+    final next = messageCtrl.text.isNotEmpty ||
+        fileUploadBase64 != null ||
+        audioPath != null;
 
     if (hasMessage != next) {
       hasMessage = next;
@@ -106,11 +108,11 @@ class ChatProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onNewSnapshot(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
+  void onNewSnapshot(
+      List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
     messages
       ..clear()
       ..addAll(docs);
-
     notifyListeners();
   }
 
@@ -145,8 +147,7 @@ class ChatProvider extends ChangeNotifier {
     if (currentChatId == null || currentSeller == null) return;
 
     final text = messageCtrl.text.trim();
-
-    if (text.isEmpty && fileUpload == null && audioPath == null) return;
+    if (text.isEmpty && fileUploadBase64 == null && audioPath == null) return;
 
     final message = ChatMessageModel(
       messageId: const Uuid().v4(),
@@ -154,14 +155,14 @@ class ChatProvider extends ChangeNotifier {
       senderId: userId,
       receiverId: currentSeller!.uid!,
       text: text.isEmpty ? null : text,
-      imageUrl: fileUpload,
+      imageUrl: fileUploadBase64,  
       audioUrl: audioPath,
       createdAt: DateTime.now(),
-      isRead: false
+      isRead: false,
     );
 
     context.read<ChatBloc>().add(
-          SendProductMessage(message, _auth.getUeserId(), currentSeller!.uid!),
+          SendProductMessage(message, userId, currentSeller!.uid!),
         );
 
     clearMessage();
@@ -185,66 +186,62 @@ class ChatProvider extends ChangeNotifier {
       bytes = await File(file.path!).readAsBytes();
     }
 
-    fileUpload = base64Encode(bytes);
-
-    notifyListeners();
+    fileUploadBase64 = base64Encode(bytes);
     _syncSendState();
+    notifyListeners();
   }
 
   void removeFile() {
-    fileUpload = null;
-    notifyListeners();
+    fileUploadBase64 = null;
     _syncSendState();
+    notifyListeners();
   }
 
   Future<void> handleMicTap() async {
+    if (isRecording) {
+     
+      final path = await audioRecorder.stop();
+      isRecording = false;
 
-  if (isRecording) {
+      if (path != null && path.isNotEmpty) {
+        audioPath = path;
+        hasMessage = true;
+      }
+    } else {
+     
+      final permitted = await Permission.microphone.request();
+      if (!permitted.isGranted) {
+        notifyListeners();
+        return;
+      }
 
-    await audioRecorder.stop();
+      final recordPath = kIsWeb
+          ? 'voice_${DateTime.now().millisecondsSinceEpoch}.m4a'
+          : '${(await getTemporaryDirectory()).path}/voice_${DateTime.now().millisecondsSinceEpoch}.m4a';
 
-    final path = await audioRecorder.stop();
-
-    isRecording = false;
-
-    if (path != null && path.isNotEmpty) {
-
-      audioPath = path;
-
-      hasMessage = true;
+      isRecording = true;
+      await audioRecorder.record(path: recordPath);
     }
 
-  } else {
-
-   
-
-    isRecording = true;
-
-    final path = kIsWeb
-        ? 'voice_${DateTime.now().millisecondsSinceEpoch}.m4a'
-        : '${(await getTemporaryDirectory()).path}/voice_${DateTime.now().millisecondsSinceEpoch}.m4a';
-
-    
-
-    await audioRecorder.record(path: path);
+    notifyListeners();
   }
 
-  notifyListeners();
-}
-  void discardAudio() {
+  Future<void> discardAudio() async {
+ 
+    if (isRecording) {
+      await audioRecorder.stop();
+      isRecording = false;
+    }
     audioPath = null;
-    isRecording = false;
-    hasMessage = messageCtrl.text.isNotEmpty || fileUpload != null;
-
+    hasMessage = messageCtrl.text.isNotEmpty || fileUploadBase64 != null;
     notifyListeners();
   }
 
   void clearMessage() {
     messageCtrl.clear();
-    fileUpload = null;
-    hasMessage = false;
+    fileUploadBase64 = null;
     audioPath = null;
-
+    hasMessage = false;
     notifyListeners();
   }
 
@@ -257,15 +254,13 @@ class ChatProvider extends ChangeNotifier {
     currentChatId = null;
     currentSeller = null;
     currentChat = null;
-
     messages.clear();
     hasReachedEnd = false;
     isLoadingMore = false;
-
     notifyListeners();
   }
 
-  clearPath() {
+  void clearPath() {
     audioPath = null;
     notifyListeners();
   }
