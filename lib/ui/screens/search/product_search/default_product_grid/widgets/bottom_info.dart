@@ -1,6 +1,7 @@
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/auth/listeners/auth_bloc_listener.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/price_row.dart';
+
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/auth/listeners/auth_bloc_listener.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/price_row.dart';
 import 'package:flutter/material.dart';
 
 Widget buildBottomInfo({

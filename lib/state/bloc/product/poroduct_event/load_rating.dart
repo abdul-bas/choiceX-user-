@@ -1,4 +1,5 @@
-import 'package:coice/state/bloc/product/poroduct_event/product_event.dart';
+import 'package:choicex/state/bloc/product/poroduct_event/product_event.dart';
+
 
 class LoadRating extends ProductBlocEvent {
  

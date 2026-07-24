@@ -1,9 +1,9 @@
 
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/helpers/order/get_status_message.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/ui/screens/order_tracking/controller/controller.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/helpers/order/get_status_message.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/ui/screens/order_tracking/controller/controller.dart';
 import 'package:flutter/material.dart';
 
 class StatusBadge extends StatelessWidget {

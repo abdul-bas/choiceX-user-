@@ -1,13 +1,14 @@
+import 'package:choicex/core/utils/helpers/favorite/get_product_list.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/state/provider/wishlist_controller.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/core/utils/helpers/favorite/get_product_list.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/state/provider/wishlist_controller.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';

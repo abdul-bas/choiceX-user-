@@ -1,5 +1,7 @@
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/models/user_model.dart';
+
+
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/models/user_model.dart';
 
 abstract class AuthEvent {}
 

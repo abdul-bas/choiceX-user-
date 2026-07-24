@@ -1,4 +1,5 @@
- import 'package:coice/ui/common_widgets/textInter.dart';
+ 
+import 'package:choicex/ui/common_widgets/textInter.dart';
 import 'package:flutter/material.dart';
 
 Widget buildSectionLabel(String title) {

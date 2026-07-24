@@ -1,26 +1,26 @@
-
-import 'package:coice/firebase_options.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/chat/chat_bloc.dart';
-import 'package:coice/state/bloc/notification/notification_bloc.dart';
-import 'package:coice/state/bloc/obscure_bloc/obscure_bloc.dart';
-import 'package:coice/state/bloc/order/order_bloc/order_bloc.dart';
-import 'package:coice/state/bloc/page_index/page_bloc.dart';
-import 'package:coice/state/bloc/product/product_bloc/product_bloc.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_bloc.dart';
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/state/provider/audio_preview_provider.dart';
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/state/provider/chat_provider.dart';
-import 'package:coice/state/provider/filter_provider.dart';
-import 'package:coice/state/provider/home_controller.dart';
-import 'package:coice/state/provider/order_detail_provider.dart';
-import 'package:coice/state/provider/product_search_controller.dart';
-import 'package:coice/state/provider/profile_update_provider.dart';
-import 'package:coice/state/provider/promo_code_pop_state.dart';
-import 'package:coice/state/provider/simular_product_state.dart';
-import 'package:coice/state/provider/wishlist_controller.dart';
-import 'package:coice/ui/screens/splash/splash_screen.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/firebase_options.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/chat/chat_bloc.dart';
+import 'package:choicex/state/bloc/notification/notification_bloc.dart';
+import 'package:choicex/state/bloc/obscure_bloc/obscure_bloc.dart';
+import 'package:choicex/state/bloc/order/order_bloc/order_bloc.dart';
+import 'package:choicex/state/bloc/page_index/page_bloc.dart';
+import 'package:choicex/state/bloc/product/product_bloc/product_bloc.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_bloc.dart';
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/state/provider/audio_preview_provider.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/state/provider/chat_provider.dart';
+import 'package:choicex/state/provider/filter_provider.dart';
+import 'package:choicex/state/provider/home_controller.dart';
+import 'package:choicex/state/provider/order_detail_provider.dart';
+import 'package:choicex/state/provider/product_search_controller.dart';
+import 'package:choicex/state/provider/profile_update_provider.dart';
+import 'package:choicex/state/provider/promo_code_pop_state.dart';
+import 'package:choicex/state/provider/simular_product_state.dart';
+import 'package:choicex/state/provider/wishlist_controller.dart';
+import 'package:choicex/ui/screens/splash/splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -40,9 +40,9 @@ void main() async {
       'pk_test_51SYg0gImJBBi6PZmgW0MMcAsC3T5h1aEMokscIlxb5XEiX4a1dKrgRN85FlBbBV00UfgPEk8rCs5xJXBZhQqptMn00GAvsSgDR';
   await Permission.location.request();
   FirebaseAuth.instance.authStateChanges().listen((user) {
-    // if (user != null) {
-    //   AuthRepository().setUserOnlineStatus(user.uid);
-    // }
+    if (user != null) {
+      AuthRepository().setUserOnlineStatus(user.uid);
+    }
   });
   runApp(const MyApp());
 }
@@ -80,7 +80,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => WishlistController()),
           ChangeNotifierProvider(create: (_) => OrderDetailProvider()),
           ChangeNotifierProvider(create: (_) => ChatProvider()),
-          ChangeNotifierProvider(create: (_) => AudioPreviewProvider()), ChangeNotifierProvider(create: (_) => EditProfileProvider()),
+          ChangeNotifierProvider(create: (_) => AudioPreviewProvider()),
+          ChangeNotifierProvider(create: (_) => EditProfileProvider()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

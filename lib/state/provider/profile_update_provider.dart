@@ -1,8 +1,7 @@
 import 'dart:io';
-
-import 'package:coice/data/models/user_model.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/edit_profile_event.dart';
+import 'package:choicex/data/models/user_model.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/edit_profile_event.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';

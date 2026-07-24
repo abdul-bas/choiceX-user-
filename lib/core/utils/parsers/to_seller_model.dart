@@ -1,5 +1,6 @@
+import 'package:choicex/data/models/seller_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/seller_model.dart';
+
 import 'package:flutter/material.dart';
 
 SellerModel toSellerModel(AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> sellerDoc) {

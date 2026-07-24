@@ -1,14 +1,14 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/user_model.dart';
-import 'package:coice/state/provider/profile_update_provider.dart';
-import 'package:coice/ui/screens/account/controller/controller.dart';
-import 'package:coice/ui/screens/account/listeners/edit_profile_listener.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/ui/common_widgets/text_slab.dart';
-import 'package:coice/ui/common_widgets/cutom_text_form_field_with_label.dart';
-import 'package:coice/ui/screens/account/widget/image_sorce_sheet.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/user_model.dart';
+import 'package:choicex/state/provider/profile_update_provider.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/common_widgets/cutom_text_form_field_with_label.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/common_widgets/text_slab.dart';
+import 'package:choicex/ui/screens/account/controller/controller.dart';
+import 'package:choicex/ui/screens/account/listeners/edit_profile_listener.dart';
+import 'package:choicex/ui/screens/account/widget/image_sorce_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 class EditProfilePage extends StatelessWidget {

@@ -1,15 +1,16 @@
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/models/retrun_and_refund/return_and_refund.dart';
+import 'package:choicex/data/models/status_config/status_config.dart';
+import 'package:choicex/data/repository/order_repository.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/order_details/controller/controller.dart';
+import 'package:choicex/ui/screens/order_details/dialogs/return_request_dialog/return_request_dialog.dart';
+import 'package:choicex/ui/screens/order_tracking/order_taraking_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/models/retrun_and_refund/return_and_refund.dart';
-import 'package:coice/data/models/status_config/status_config.dart';
-import 'package:coice/data/repository/order_repository.dart';
-import 'package:coice/ui/screens/order_details/controller/controller.dart';
-import 'package:coice/ui/screens/order_details/dialogs/return_request_dialog/return_request_dialog.dart';
-import 'package:coice/ui/screens/order_tracking/order_taraking_screen.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
+
 import 'package:flutter/material.dart';
 
 class DeliveredSection extends StatelessWidget {

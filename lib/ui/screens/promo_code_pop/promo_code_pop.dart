@@ -1,9 +1,9 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/state/provider/promo_code_pop_state.dart';
-import 'package:coice/ui/screens/promo_code_pop/widget/bill_deatil_section.dart';
-import 'package:coice/ui/screens/promo_code_pop/widget/promo_code_input.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/state/provider/promo_code_pop_state.dart';
+import 'package:choicex/ui/screens/promo_code_pop/widget/bill_deatil_section.dart';
+import 'package:choicex/ui/screens/promo_code_pop/widget/promo_code_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';

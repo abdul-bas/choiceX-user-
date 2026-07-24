@@ -1,8 +1,8 @@
 
 
-import 'package:coice/data/models/address_model.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_managing_widgets/divider.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_managing_widgets/info_row.dart';
+import 'package:choicex/data/models/address_model.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_managing_widgets/divider.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_managing_widgets/info_row.dart';
 import 'package:flutter/material.dart';
 
 class AddressCardBody extends StatelessWidget {

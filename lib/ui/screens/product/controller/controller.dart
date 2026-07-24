@@ -1,18 +1,18 @@
 
 
-import 'package:coice/core/routes/push_function.dart';
-import 'package:coice/core/utils/helpers/common/get_discout_price.dart';
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/models/notification_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/state/bloc/notification/notification_bloc.dart';
-import 'package:coice/state/bloc/notification/notification_event.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/chat/messages/message_screen.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
+import 'package:choicex/core/routes/push_function.dart';
+import 'package:choicex/core/utils/helpers/common/get_discout_price.dart';
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/models/notification_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/state/bloc/notification/notification_bloc.dart';
+import 'package:choicex/state/bloc/notification/notification_event.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/chat/messages/message_screen.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';

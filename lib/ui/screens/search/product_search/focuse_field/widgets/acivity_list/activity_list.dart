@@ -1,7 +1,8 @@
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/search/controller/controller.dart';
-import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_item.dart';
 
+
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/search/controller/controller.dart' show SearchLogic;
+import 'package:choicex/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_item.dart';
 import 'package:flutter/material.dart';
 
 Widget buildActivityList(

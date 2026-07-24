@@ -1,6 +1,7 @@
-import 'package:coice/data/models/notification_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/notification_repository.dart';
+
+import 'package:choicex/data/models/notification_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/data/repository/notification_repository.dart';
 import 'package:flutter/material.dart';
 
 class NotificationController {

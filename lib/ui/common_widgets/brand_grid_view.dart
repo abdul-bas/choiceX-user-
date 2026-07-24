@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/get_discout_price.dart';
-import 'package:coice/core/utils/helpers/find_product.dart';
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/ui/screens/auth/listeners/auth_bloc_listener.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/get_discout_price.dart';
+import 'package:choicex/core/utils/helpers/find_product.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/ui/screens/auth/listeners/auth_bloc_listener.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';
@@ -75,13 +75,13 @@ class BrandGridView
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.07),
+                    color: Colors.black.withValues(alpha:  0.07),
                     blurRadius: 20,
                     spreadRadius: 0,
                     offset: const Offset(0, 6),
                   ),
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.03),
+                    color: Colors.black.withValues(alpha:  0.03),
                     blurRadius: 6,
                     spreadRadius: 0,
                     offset: const Offset(0, 1),
@@ -113,10 +113,10 @@ class BrandGridView
                                 end: Alignment.bottomCenter,
                                 stops: const [0.0, 0.3, 0.65, 1.0],
                                 colors: [
-                                  Colors.black.withOpacity(0.28),
+                                  Colors.black.withValues(alpha:  0.28),
                                   Colors.transparent,
                                   Colors.transparent,
-                                  Colors.black.withOpacity(0.52),
+                                  Colors.black.withValues(alpha:  0.52),
                                 ],
                               ),
                             ),
@@ -134,7 +134,7 @@ class BrandGridView
                                   borderRadius: BorderRadius.circular(20),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.12),
+                                      color: Colors.black.withValues(alpha:  0.12),
                                       blurRadius: 6,
                                       offset: const Offset(0, 2),
                                     ),

@@ -1,5 +1,6 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/more/controller/profile_controller.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/ui/screens/more/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 class LogOutDialog extends StatelessWidget {
   const LogOutDialog({super.key});

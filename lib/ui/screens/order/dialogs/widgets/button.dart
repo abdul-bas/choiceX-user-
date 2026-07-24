@@ -1,6 +1,7 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/status_config/status_config.dart';
-import 'package:coice/data/repository/order_repository.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/status_config/status_config.dart';
+import 'package:choicex/data/repository/order_repository.dart';
 import 'package:flutter/material.dart';
 
 Widget buildButton(StatusConfig cfg, BuildContext context,

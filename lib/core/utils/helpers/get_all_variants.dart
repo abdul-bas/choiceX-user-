@@ -1,4 +1,6 @@
-import 'package:coice/data/models/prodect_model.dart';
+
+
+import 'package:choicex/data/models/prodect_model.dart';
 
 List<Map<String, dynamic>> getAllVariant(List<ProductModel> products) {
   List<Map<String, dynamic>> allVariant = [];
@@ -33,8 +35,8 @@ List<Map<String, dynamic>> getRecentVariants(List<ProductModel> products) {
 DateTime parseDate(String date) {
   final parts = date.split('/');
   return DateTime(
-    int.parse(parts[2]), // year
-    int.parse(parts[1]), // month
-    int.parse(parts[0]), // day
+    int.parse(parts[2]), 
+    int.parse(parts[1]), 
+    int.parse(parts[0]), 
   );
 }

@@ -1,18 +1,17 @@
 import 'dart:convert';
 import 'dart:typed_data';
-
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/get_discout_price.dart';
-import 'package:coice/core/utils/helpers/find_product.dart';
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/ui/screens/auth/listeners/auth_bloc_listener.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/get_discout_price.dart';
+import 'package:choicex/core/utils/helpers/find_product.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/auth/listeners/auth_bloc_listener.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';
@@ -44,10 +43,9 @@ class AllProductVariantGrid extends StatelessWidget {
           childAspectRatio: 0.8,
         ),
         itemBuilder: (context, index) {
-       
           final item = allVariant[index];
           final variantIndex = item['variantIndex'];
-          
+
           final product = findProduct(item: item, products: products);
           final Uint8List bytes =
               base64Decode(product.variants[variantIndex]['images'][0]);
@@ -121,13 +119,13 @@ class AllProductVariantGrid extends StatelessWidget {
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
                               colors: [
-                                Colors.white.withOpacity(0.8),
-                                Colors.white.withOpacity(0.95),
+                                Colors.white.withValues(alpha: 0.8),
+                                Colors.white.withValues(alpha: 0.95),
                               ],
                             ),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
+                                color: Colors.black.withValues(alpha: 0.15),
                                 blurRadius: 10,
                                 spreadRadius: 1,
                                 offset: const Offset(0, 3),
@@ -191,29 +189,40 @@ class AllProductVariantGrid extends StatelessWidget {
                                     ],
                                   ),
                                   GestureDetector(
-                                      onTap: () {
-          final variant = product.variants[variantIndex];
-          context.read<AuthBloc>().add(AddCart(
-              cart: CartModel(
-                category: product.c,
-                 model: product.model,
-               deliveryDate: DateTime.now().add(
-  Duration(days: product.expectedDeliveryDays),
-),
-brand: product.brand,
-color: variant['color'],discount: double.parse(variant['price']),
-                  variantIndex: variantIndex,
-                  discountPrice: getDiscountPrice(double.parse(variant['price']), double.parse(variant['discount'])),
-                  cartId: const Uuid().v4(),
-                  productId: product.id,
-                  productName: product.productName,
-                  image: variant['images'][0],
-                  price: double.parse(variant['price']),
-                  quantity: 1,
-                  userId: AuthRepository().getUeserId(),
-                  sellerId: product.sellerId,
-                  status: "status")));
-        },
+                                    onTap: () {
+                                      final variant =
+                                          product.variants[variantIndex];
+                                      context.read<AuthBloc>().add(AddCart(
+                                          cart: CartModel(
+                                              category: product.c,
+                                              model: product.model,
+                                              deliveryDate: DateTime.now().add(
+                                                Duration(
+                                                    days: product
+                                                        .expectedDeliveryDays),
+                                              ),
+                                              brand: product.brand,
+                                              color: variant['color'],
+                                              discount: double.parse(
+                                                  variant['price']),
+                                              variantIndex: variantIndex,
+                                              discountPrice: getDiscountPrice(
+                                                  double.parse(
+                                                      variant['price']),
+                                                  double.parse(
+                                                      variant['discount'])),
+                                              cartId: const Uuid().v4(),
+                                              productId: product.id,
+                                              productName: product.productName,
+                                              image: variant['images'][0],
+                                              price: double.parse(
+                                                  variant['price']),
+                                              quantity: 1,
+                                              userId:
+                                                  AuthRepository().getUeserId(),
+                                              sellerId: product.sellerId,
+                                              status: "status")));
+                                    },
                                     child: Container(
                                       padding: const EdgeInsets.all(6),
                                       decoration: BoxDecoration(
@@ -245,4 +254,3 @@ color: variant['color'],discount: double.parse(variant['price']),
     );
   }
 }
-

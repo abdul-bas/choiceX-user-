@@ -1,11 +1,12 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/helpers/get_formatted_amount.dart';
-import 'package:coice/services/strip_payment.dart';
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/state/provider/promo_code_pop_state.dart';
-import 'package:coice/ui/screens/promo_code_pop/controller/controller.dart';
-import 'package:coice/ui/screens/promo_code_pop/widget/price_row.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/helpers/get_formatted_amount.dart';
+import 'package:choicex/services/strip_payment.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/state/provider/promo_code_pop_state.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/screens/promo_code_pop/controller/controller.dart';
+import 'package:choicex/ui/screens/promo_code_pop/widget/price_row.dart';
 import 'package:flutter/material.dart';
 
 class BillDetailsSection extends StatelessWidget {

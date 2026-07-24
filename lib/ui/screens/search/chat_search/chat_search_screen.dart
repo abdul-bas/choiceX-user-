@@ -1,13 +1,13 @@
 
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/chat/chat_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/state/provider/chat_search_provider.dart';
-import 'package:coice/ui/screens/chat/chat/widgets/chat_list_item.dart';
-import 'package:coice/ui/screens/chat/messages/message_screen.dart';
-import 'package:coice/ui/screens/search/chat_search/widgets/empty_state.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/chat/chat_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/state/provider/chat_search_provider.dart';
+import 'package:choicex/ui/screens/chat/chat/widgets/chat_list_item.dart';
+import 'package:choicex/ui/screens/chat/messages/message_screen.dart';
+import 'package:choicex/ui/screens/search/chat_search/widgets/empty_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 class ChatSearchScreen extends StatelessWidget {

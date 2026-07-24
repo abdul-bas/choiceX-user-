@@ -1,7 +1,8 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/ui/screens/order_tracking/controller/controller.dart';
-import 'package:coice/ui/screens/order_tracking/widgets/time_line/time_line_item.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/ui/screens/order_tracking/controller/controller.dart';
+import 'package:choicex/ui/screens/order_tracking/widgets/time_line/time_line_item.dart';
 import 'package:flutter/material.dart';
 
 class TrackingTimeline extends StatelessWidget {

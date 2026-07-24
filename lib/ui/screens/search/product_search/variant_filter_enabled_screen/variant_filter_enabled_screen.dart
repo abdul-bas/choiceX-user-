@@ -1,10 +1,10 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/product_search_controller.dart';
-import 'package:coice/ui/screens/cart/listeners/cart_listener.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/empty_state/empty_state.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/product_variant_grid.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/silver_app_bar/silver_app_bar.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/product_search_controller.dart';
+import 'package:choicex/ui/screens/cart/listeners/cart_listener.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/empty_state/empty_state.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/product_variant_grid.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/silver_app_bar/silver_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,7 +1,8 @@
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/ui/screens/search/product_search/non_focus_view/widgets/category_tabs/category_chip.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
+
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/ui/screens/search/product_search/non_focus_view/widgets/category_tabs/category_chip.dart';
 import 'package:flutter/material.dart';
 
 Widget buildNonFocusCategoryTabs(List<ProductModel> products) {

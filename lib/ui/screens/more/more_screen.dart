@@ -2,17 +2,17 @@
 
 import 'dart:io';
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/ui/screens/more/controller/profile_controller.dart';
-import 'package:coice/ui/screens/more/listeners/log_out.dart';
-import 'package:coice/ui/screens/more/log_out_dialog/log_out_dialog.dart';
-import 'package:coice/ui/screens/more/widgets/divider_widget.dart';
-import 'package:coice/ui/screens/more/widgets/menu_card_widget.dart';
-import 'package:coice/ui/screens/more/widgets/menu_item_widget.dart';
-import 'package:coice/ui/screens/more/widgets/section_title_widget.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/more/controller/profile_controller.dart';
+import 'package:choicex/ui/screens/more/listeners/log_out.dart';
+import 'package:choicex/ui/screens/more/log_out_dialog/log_out_dialog.dart';
+import 'package:choicex/ui/screens/more/widgets/divider_widget.dart';
+import 'package:choicex/ui/screens/more/widgets/menu_card_widget.dart';
+import 'package:choicex/ui/screens/more/widgets/menu_item_widget.dart';
+import 'package:choicex/ui/screens/more/widgets/section_title_widget.dart';
 import 'package:flutter/material.dart';
 
 class MoreScreen extends StatelessWidget {

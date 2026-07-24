@@ -1,5 +1,5 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 class NoResults extends StatelessWidget {
   const NoResults({super.key, required this.query});

@@ -1,7 +1,8 @@
+import 'package:choicex/data/models/notification_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/notification/notification_state.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/notification_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/notification/notification_state.dart';
+
 
 class NotificationRepository {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;

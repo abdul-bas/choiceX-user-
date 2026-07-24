@@ -1,7 +1,8 @@
+import 'package:choicex/core/utils/parsers/to_product_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/core/utils/parsers/to_product_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
 import 'package:flutter/material.dart';
+
 class ProductSearchController extends ChangeNotifier {
   int filterTagsIndex = 0;
   bool isSearchFilterEnabled = false;
@@ -12,8 +13,7 @@ class ProductSearchController extends ChangeNotifier {
 
   bool productsInitialized = false;
 
-  final TextEditingController messageInputCtrl =
-      TextEditingController();
+  final TextEditingController messageInputCtrl = TextEditingController();
 
   List<Map<String, dynamic>> allVariants = [];
 
@@ -23,9 +23,9 @@ class ProductSearchController extends ChangeNotifier {
   }
 
   void suggestions(
-      List<ProductModel> productList,
-      String text,
-      ) {
+    List<ProductModel> productList,
+    String text,
+  ) {
     if (text.isEmpty) {
       filteredList = productList;
     } else {
@@ -60,18 +60,15 @@ class ProductSearchController extends ChangeNotifier {
 
         final String? variantColor = v['color'];
         final String? variantStorage = v['storage'];
-        final int variantPrice =
-            int.tryParse(v['price'] ?? '') ?? 0;
+        final int variantPrice = int.tryParse(v['price'] ?? '') ?? 0;
 
         bool matches = true;
 
-        if (selectedColor != null &&
-            selectedColor != variantColor) {
+        if (selectedColor != null && selectedColor != variantColor) {
           matches = false;
         }
 
-        if (selectedStorage != null &&
-            selectedStorage != variantStorage) {
+        if (selectedStorage != null && selectedStorage != variantStorage) {
           matches = false;
         }
 
@@ -120,11 +117,11 @@ class ProductSearchController extends ChangeNotifier {
 
     categoryList = selected == 'all'
         ? list
-        : list.where(
-            (e) =>
-                e.category.toLowerCase() ==
-                selected,
-          ).toList();
+        : list
+            .where(
+              (e) => e.category.toLowerCase() == selected,
+            )
+            .toList();
 
     notifyListeners();
   }

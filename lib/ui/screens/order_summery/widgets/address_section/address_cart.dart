@@ -1,9 +1,10 @@
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/address_icons.dart';
-import 'package:coice/data/models/address_model.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/address_map_thumbnail.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/default_badge.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/address_icons.dart';
+import 'package:choicex/data/models/address_model.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/address_map_thumbnail.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/default_badge.dart';
 import 'package:flutter/material.dart';
 
 Widget buildAddressCard(AddressModel address) {

@@ -1,6 +1,7 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/address_state.dart';
 
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/address_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/empty_state/set_filter_button.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/empty_state/set_filter_button.dart';
 import 'package:flutter/material.dart';
 
 Widget buildFilterVariantEmptyState(BuildContext context) {

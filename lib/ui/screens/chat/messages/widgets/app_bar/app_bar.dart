@@ -1,6 +1,6 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/repository/chat_repository.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
 import 'package:flutter/material.dart';
 
 AppBar messageAppBar(BuildContext context, dynamic seller) {

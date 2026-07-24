@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:coice/core/utils/helpers/find_product.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/bottom_info.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/discount_badge.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/full_bleed_image.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/scrim.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/widgets/wishlist_button.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/core/utils/helpers/find_product.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/bottom_info.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/discount_badge.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/full_bleed_image.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/scrim.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/widgets/wishlist_button.dart';
 import 'package:flutter/material.dart';
 
 class DefaultProductGrid extends StatelessWidget {

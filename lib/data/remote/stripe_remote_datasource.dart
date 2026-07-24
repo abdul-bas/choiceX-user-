@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:coice/core/constants/api_keys/stripe.dart';
+
+import 'package:choicex/core/constants/api_keys/stripe.dart';
 import 'package:http/http.dart' as http;
 
 Future<Map<String, dynamic>> createPaymentIntent(

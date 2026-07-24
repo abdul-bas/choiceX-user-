@@ -1,14 +1,15 @@
-import 'package:coice/core/constants/app_strings/return_request_reasons.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/models/retrun_and_refund/return_and_refund.dart';
-import 'package:coice/state/bloc/order/order_bloc/order_bloc.dart';
-import 'package:coice/state/bloc/order/order_event/return_request_event.dart';
-import 'package:coice/ui/screens/order/dialogs/status_update_dialog.dart';
-import 'package:coice/ui/screens/order_details/widgets/dialogs/buttons.dart';
-import 'package:coice/ui/screens/order_details/widgets/dialogs/chips.dart';
-import 'package:coice/ui/screens/order_details/widgets/dialogs/detail_field.dart';
-import 'package:coice/ui/screens/order_details/widgets/dialogs/header.dart';
-import 'package:coice/ui/screens/order_details/widgets/dialogs/label.dart';
+
+import 'package:choicex/core/constants/app_strings/return_request_reasons.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/models/retrun_and_refund/return_and_refund.dart';
+import 'package:choicex/state/bloc/order/order_bloc/order_bloc.dart';
+import 'package:choicex/state/bloc/order/order_event/return_request_event.dart';
+import 'package:choicex/ui/screens/order/dialogs/status_update_dialog.dart';
+import 'package:choicex/ui/screens/order_details/widgets/dialogs/buttons.dart';
+import 'package:choicex/ui/screens/order_details/widgets/dialogs/chips.dart';
+import 'package:choicex/ui/screens/order_details/widgets/dialogs/detail_field.dart';
+import 'package:choicex/ui/screens/order_details/widgets/dialogs/header.dart';
+import 'package:choicex/ui/screens/order_details/widgets/dialogs/label.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';

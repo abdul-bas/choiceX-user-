@@ -1,7 +1,9 @@
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/state/bloc/chat/chat_events.dart';
-import 'package:coice/state/bloc/chat/chat_states.dart';
+
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/state/bloc/chat/chat_events.dart';
+import 'package:choicex/state/bloc/chat/chat_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
   final ChatRepository chatRepository = ChatRepository();
 

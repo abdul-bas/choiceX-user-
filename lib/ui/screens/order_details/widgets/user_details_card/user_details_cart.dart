@@ -1,9 +1,9 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/parsers/to_user_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/ui/screens/order_details/widgets/user_details_card/simple_info_row.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/parsers/to_user_model.dart';
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/ui/screens/order_details/widgets/user_details_card/simple_info_row.dart';
 import 'package:flutter/material.dart';
 
 class UserDetailsCard extends StatelessWidget {

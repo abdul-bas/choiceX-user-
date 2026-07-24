@@ -1,5 +1,6 @@
-import 'package:coice/core/utils/helpers/get_formatted_date.dart';
-import 'package:coice/data/models/prodect_model.dart';
+
+import 'package:choicex/core/utils/helpers/get_formatted_date.dart';
+import 'package:choicex/data/models/prodect_model.dart';
 import 'package:flutter/material.dart';
 
 class WishlistController extends ChangeNotifier {

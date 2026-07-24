@@ -1,6 +1,7 @@
-import 'package:coice/data/repository/notification_repository.dart';
-import 'package:coice/state/bloc/notification/notification_event.dart';
-import 'package:coice/state/bloc/notification/notification_state.dart';
+
+import 'package:choicex/data/repository/notification_repository.dart';
+import 'package:choicex/state/bloc/notification/notification_event.dart';
+import 'package:choicex/state/bloc/notification/notification_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {

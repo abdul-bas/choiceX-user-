@@ -1,11 +1,12 @@
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/ui/screens/order/listeners/place_order.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/address_section.dart';
-import 'package:coice/ui/screens/order_summery/widgets/product_section/production_section.dart';
-import 'package:coice/ui/common_widgets/checkout_circle_widget.dart';
-import 'package:coice/ui/screens/order_summery/widgets/check_out_button/check_out_%20button.dart';
-import 'package:coice/ui/common_widgets/text_slab.dart';
+
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/ui/common_widgets/checkout_circle_widget.dart';
+import 'package:choicex/ui/common_widgets/text_slab.dart';
+import 'package:choicex/ui/screens/order/listeners/place_order.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/address_section.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/check_out_button/check_out_%20button.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/product_section/production_section.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

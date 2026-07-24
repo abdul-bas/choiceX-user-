@@ -1,9 +1,9 @@
 
-  import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/status_config/status_config.dart';
-import 'package:coice/ui/screens/order/dialogs/widgets/button.dart';
-import 'package:coice/ui/screens/order/dialogs/widgets/info_card.dart';
-import 'package:coice/ui/screens/order/dialogs/widgets/journey_timeline.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/status_config/status_config.dart';
+import 'package:choicex/ui/screens/order/dialogs/widgets/button.dart';
+import 'package:choicex/ui/screens/order/dialogs/widgets/info_card.dart';
+import 'package:choicex/ui/screens/order/dialogs/widgets/journey_timeline.dart';
 import 'package:flutter/material.dart';
 
   Widget buildStatusDialogBody(

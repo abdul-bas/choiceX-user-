@@ -1,11 +1,11 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/address_icons.dart';
-import 'package:coice/core/utils/helpers/common/cap.dart';
-import 'package:coice/data/models/address_model.dart';
-import 'package:coice/ui/screens/user_address/dialogs/address_delete_dialog.dart';
-import 'package:coice/ui/screens/user_address/edit_user_address/edit_address.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_managing_widgets/header_button.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/address_icons.dart';
+import 'package:choicex/core/utils/helpers/common/cap.dart';
+import 'package:choicex/data/models/address_model.dart';
+import 'package:choicex/ui/screens/user_address/dialogs/address_delete_dialog.dart';
+import 'package:choicex/ui/screens/user_address/edit_user_address/edit_address.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_managing_widgets/header_button.dart';
 import 'package:flutter/material.dart';
 
 class AddressCardHeader extends StatelessWidget {

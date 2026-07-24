@@ -1,10 +1,11 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/ui/screens/order_tracking/controller/controller.dart';
-import 'package:coice/ui/screens/order_tracking/widgets/delivery_info/delivery_decor_circle.dart';
-import 'package:coice/ui/screens/order_tracking/widgets/delivery_info/order_id_row.dart';
-import 'package:coice/ui/screens/order_tracking/widgets/delivery_info/status_badge.dart';
-import 'package:coice/ui/screens/order_tracking/widgets/delivery_info/status_icon.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/ui/screens/order_tracking/controller/controller.dart';
+import 'package:choicex/ui/screens/order_tracking/widgets/delivery_info/delivery_decor_circle.dart';
+import 'package:choicex/ui/screens/order_tracking/widgets/delivery_info/order_id_row.dart';
+import 'package:choicex/ui/screens/order_tracking/widgets/delivery_info/status_badge.dart';
+import 'package:choicex/ui/screens/order_tracking/widgets/delivery_info/status_icon.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryInfoCard extends StatelessWidget {

@@ -1,12 +1,12 @@
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/order_repository.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/order/my_orders.dart';
-import 'package:coice/ui/screens/order_details/order_detail_screen.dart';
-import 'package:coice/ui/screens/order_tracking/order_taraking_screen.dart';
-import 'package:coice/ui/screens/user_dashboard/DashboardScreen.dart';
+
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/order/my_orders.dart';
+import 'package:choicex/ui/screens/order_details/order_detail_screen.dart';
+import 'package:choicex/ui/screens/order_tracking/order_taraking_screen.dart';
+import 'package:choicex/ui/screens/user_dashboard/DashboardScreen.dart';
 import 'package:flutter/material.dart';
 
 class OrderController {

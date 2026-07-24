@@ -1,5 +1,6 @@
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/ui/common_widgets/custom_text_form_field.dart';
+
+import 'package:choicex/ui/common_widgets/custom_text_form_field.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

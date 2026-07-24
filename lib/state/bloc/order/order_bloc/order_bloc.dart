@@ -1,9 +1,9 @@
-import 'package:coice/data/repository/order_repository.dart';
-import 'package:coice/state/bloc/order/order_event/cancellation_request_event.dart';
 
-import 'package:coice/state/bloc/order/order_event/return_request_event.dart';
-import 'package:coice/state/bloc/order/order_event/update_request_event.dart';
-import 'package:coice/state/bloc/order/order_state/return_request_state.dart';
+import 'package:choicex/data/repository/order_repository.dart';
+import 'package:choicex/state/bloc/order/order_event/cancellation_request_event.dart';
+import 'package:choicex/state/bloc/order/order_event/return_request_event.dart';
+import 'package:choicex/state/bloc/order/order_event/update_request_event.dart';
+import 'package:choicex/state/bloc/order/order_state/return_request_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OrderBloc extends Bloc<OrderBlocEvent, OrderBlocState> {

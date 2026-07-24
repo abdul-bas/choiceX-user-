@@ -1,11 +1,11 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/ui/screens/user_address/controller.dart/controller.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_taking_widget/address_type_drop_down.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_taking_widget/checkout_header.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_taking_widget/field_label.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_taking_widget/styled_text_field.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/ui/screens/user_address/controller.dart/controller.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_taking_widget/address_type_drop_down.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_taking_widget/checkout_header.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_taking_widget/field_label.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_taking_widget/styled_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

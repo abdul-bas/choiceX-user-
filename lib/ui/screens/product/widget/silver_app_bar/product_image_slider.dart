@@ -1,10 +1,10 @@
 
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/background_circle.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/favourite_button.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/image_carousel.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/page_indicator.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/background_circle.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/favourite_button.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/image_carousel.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

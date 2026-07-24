@@ -1,12 +1,13 @@
 import 'dart:convert';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/routes/push_function.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/ui/common_widgets/ProductBrowseGrid.dart';
-import 'package:coice/core/utils/handlers/product_stream_handler.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/ui/screens/home/controller/controller.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/routes/push_function.dart';
+import 'package:choicex/core/utils/handlers/product_stream_handler.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/ui/common_widgets/ProductBrowseGrid.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/home/controller/controller.dart';
 import 'package:flutter/material.dart';
 
 

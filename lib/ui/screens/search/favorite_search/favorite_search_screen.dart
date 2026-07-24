@@ -1,18 +1,19 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/state/provider/wishlist_controller.dart';
-import 'package:coice/ui/screens/favorite/widgets/magazine_card.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
-import 'package:coice/ui/screens/search/favorite_search/widgets/empty_search.dart';
-import 'package:coice/ui/screens/search/favorite_search/widgets/no_results.dart';
-import 'package:coice/ui/screens/search/favorite_search/widgets/search_bar.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/state/provider/wishlist_controller.dart';
+import 'package:choicex/ui/screens/favorite/widgets/magazine_card.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
+import 'package:choicex/ui/screens/search/favorite_search/widgets/empty_search.dart';
+import 'package:choicex/ui/screens/search/favorite_search/widgets/no_results.dart';
+import 'package:choicex/ui/screens/search/favorite_search/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+
 class FavoriteSearchScreen extends StatelessWidget {
   const FavoriteSearchScreen({super.key});
 

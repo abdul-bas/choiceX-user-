@@ -1,7 +1,7 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/address_selector_sheet.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/address_selector_sheet.dart';
 import 'package:flutter/material.dart';
 
 

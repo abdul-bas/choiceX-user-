@@ -1,19 +1,19 @@
 
-import 'package:coice/core/routes/push_function.dart';
-import 'package:coice/core/utils/parsers/to_user_model.dart';
-import 'package:coice/data/models/user_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/state/bloc/auth/events/update_password_event.dart';
-import 'package:coice/ui/screens/account/edit_profile.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/more/notifications/notifications.dart';
-import 'package:coice/ui/screens/more/saved_items/saved_items.dart';
-import 'package:coice/ui/screens/more/update_password/update_password.dart';
-import 'package:coice/ui/screens/order/my_orders.dart';
-import 'package:coice/ui/screens/welcom_screen/welcome_screen.dart';
-import 'package:coice/ui/screens/user_address/manage_user_address/address_mgt.dart';
+import 'package:choicex/core/routes/push_function.dart';
+import 'package:choicex/core/utils/parsers/to_user_model.dart';
+import 'package:choicex/data/models/user_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/state/bloc/auth/events/update_password_event.dart';
+import 'package:choicex/ui/screens/account/edit_profile.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/more/notifications/notifications.dart';
+import 'package:choicex/ui/screens/more/saved_items/saved_items.dart';
+import 'package:choicex/ui/screens/more/update_password/update_password.dart';
+import 'package:choicex/ui/screens/order/my_orders.dart';
+import 'package:choicex/ui/screens/user_address/manage_user_address/address_mgt.dart';
+import 'package:choicex/ui/screens/welcom_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

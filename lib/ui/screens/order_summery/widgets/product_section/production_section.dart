@@ -1,7 +1,7 @@
 
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/ui/screens/order_summery/widgets/product_section/product_card.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/product_section/product_card.dart';
 import 'package:flutter/material.dart';
 
 Widget buildProductsSection(BuildContext context, CartState cartState) {

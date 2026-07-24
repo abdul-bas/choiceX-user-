@@ -1,4 +1,5 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 

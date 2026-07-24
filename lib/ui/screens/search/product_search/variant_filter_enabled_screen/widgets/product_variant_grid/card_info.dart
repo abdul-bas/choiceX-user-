@@ -1,7 +1,8 @@
- import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/auth/listeners/auth_bloc_listener.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/price_row.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/auth/listeners/auth_bloc_listener.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/widgets/product_variant_grid/price_row.dart';
 import 'package:flutter/material.dart';
 
 Widget buildFilterVariantCardInfo({

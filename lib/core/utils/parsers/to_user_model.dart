@@ -1,5 +1,5 @@
 
-import 'package:coice/data/models/user_model.dart';
+import 'package:choicex/data/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 UserModel? toUserModel(AsyncSnapshot<dynamic> snapshot) {

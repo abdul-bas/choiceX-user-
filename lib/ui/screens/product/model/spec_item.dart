@@ -1,5 +1,6 @@
 
-import 'package:coice/core/constants/enums/spec_kind.dart';
+import 'package:choicex/core/constants/enums/spec_kind.dart';
+
 
 class SpecItem {
   final String field;

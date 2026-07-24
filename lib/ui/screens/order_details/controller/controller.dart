@@ -1,10 +1,9 @@
-// order_detail/order_detail_logic.dart
 
-import 'package:coice/core/constants/enums/order_status.dart';
-import 'package:coice/core/utils/helpers/date_formate.dart';
-import 'package:coice/core/utils/helpers/order/get_status_message.dart';
-import 'package:coice/data/models/order_model.dart';
 
+import 'package:choicex/core/constants/enums/order_status.dart';
+import 'package:choicex/core/utils/helpers/date_formate.dart';
+import 'package:choicex/core/utils/helpers/order/get_status_message.dart';
+import 'package:choicex/data/models/order_model.dart';
 
 abstract class OrderDetailLogic {
   

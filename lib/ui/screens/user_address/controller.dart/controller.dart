@@ -1,4 +1,5 @@
-import 'package:coice/data/models/address_model.dart';
+
+import 'package:choicex/data/models/address_model.dart';
 import 'package:flutter/material.dart';
 
 class AddressController {

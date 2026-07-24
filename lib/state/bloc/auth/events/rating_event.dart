@@ -1,5 +1,6 @@
-import 'package:coice/data/models/review_model.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
+
+import 'package:choicex/data/models/review_model.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
 
 class TakeRating extends AuthEvent {
   final String productId;

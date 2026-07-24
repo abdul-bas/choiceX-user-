@@ -1,8 +1,9 @@
-import 'package:coice/data/local/shared_pref_service/recent_activities/recent_activities.dart';
-import 'package:coice/data/local/shared_pref_service/recent_search/recent_search.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_event.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_init.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_state.dart';
+
+import 'package:choicex/data/local/shared_pref_service/recent_activities/recent_activities.dart';
+import 'package:choicex/data/local/shared_pref_service/recent_search/recent_search.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_event.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_init.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RecentSearchBloc extends Bloc<RecentSearchEvent, RecentSearchState> {

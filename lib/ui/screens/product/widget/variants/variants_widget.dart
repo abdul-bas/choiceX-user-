@@ -1,10 +1,8 @@
 import 'dart:typed_data';
-
-import 'package:coice/core/utils/helpers/common/parse_color.dart';
-import 'package:coice/core/utils/helpers/product_helper/variant_section/decode_image.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/product/widget/variants/variant_tile.dart';
-
+import 'package:choicex/core/utils/helpers/common/parse_color.dart';
+import 'package:choicex/core/utils/helpers/product_helper/variant_section/decode_image.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/product/widget/variants/variant_tile.dart';
 import 'package:flutter/material.dart';
 
 class VariantsWidget extends StatelessWidget {

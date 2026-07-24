@@ -1,19 +1,20 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/more/listeners/notification_listener.dart';
-import 'package:coice/ui/screens/product/widget/bottom_bar/build_bottom_bar.dart';
-import 'package:coice/ui/screens/product/widget/chat_button/build_chat_button.dart';
-import 'package:coice/ui/screens/product/widget/section_label/build_section_label.dart';
-import 'package:coice/ui/screens/product/widget/additional_images/build_dditional_images.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/build_sliver_app_bar.dart';
-import 'package:coice/ui/screens/product/widget/tile_row/build_title_row.dart';
-import 'package:coice/ui/screens/product/widget/product-datails_table/product_detail_table.dart';
-import 'package:coice/ui/screens/product/widget/simular_product/build_simular_product.dart';
-import 'package:coice/ui/screens/cart/listeners/cart_listener.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_bloc.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_event.dart';
-import 'package:coice/ui/screens/product/widget/rating_card/rating_card_widget.dart';
-import 'package:coice/ui/screens/product/widget/variants/variants_widget.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_bloc.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_event.dart';
+import 'package:choicex/ui/screens/cart/listeners/cart_listener.dart';
+import 'package:choicex/ui/screens/more/listeners/notification_listener.dart';
+import 'package:choicex/ui/screens/product/widget/additional_images/build_dditional_images.dart';
+import 'package:choicex/ui/screens/product/widget/bottom_bar/build_bottom_bar.dart';
+import 'package:choicex/ui/screens/product/widget/chat_button/build_chat_button.dart';
+import 'package:choicex/ui/screens/product/widget/product-datails_table/product_detail_table.dart';
+import 'package:choicex/ui/screens/product/widget/rating_card/rating_card_widget.dart';
+import 'package:choicex/ui/screens/product/widget/section_label/build_section_label.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/build_sliver_app_bar.dart';
+import 'package:choicex/ui/screens/product/widget/simular_product/build_simular_product.dart';
+import 'package:choicex/ui/screens/product/widget/tile_row/build_title_row.dart';
+import 'package:choicex/ui/screens/product/widget/variants/variants_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

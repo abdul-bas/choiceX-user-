@@ -1,8 +1,9 @@
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/data/models/chat/chat_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/ui/screens/chat/messages/message_screen.dart';
+
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/data/models/chat/chat_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/ui/screens/chat/messages/message_screen.dart';
 import 'package:flutter/material.dart';
 
 class ChatController {

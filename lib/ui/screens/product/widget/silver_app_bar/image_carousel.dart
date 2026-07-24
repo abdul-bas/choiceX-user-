@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/image_tile.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/image_tile.dart';
+
 import 'package:flutter/material.dart';
 
 class ImageCarousel extends StatelessWidget {

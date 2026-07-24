@@ -1,12 +1,13 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/routes/push_function.dart';
-import 'package:coice/state/provider/home_controller.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/home/controller/controller.dart';
-import 'package:coice/ui/screens/more/notifications/notifications.dart';
-import 'package:coice/ui/screens/search/chat_search/chat_search_screen.dart';
-import 'package:coice/ui/screens/search/favorite_search/favorite_search_screen.dart';
-import 'package:coice/ui/screens/search/product_search/search.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/routes/push_function.dart';
+import 'package:choicex/state/provider/home_controller.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/home/controller/controller.dart';
+import 'package:choicex/ui/screens/more/notifications/notifications.dart';
+import 'package:choicex/ui/screens/search/chat_search/chat_search_screen.dart';
+import 'package:choicex/ui/screens/search/favorite_search/favorite_search_screen.dart';
+import 'package:choicex/ui/screens/search/product_search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

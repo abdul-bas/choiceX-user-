@@ -1,10 +1,10 @@
 
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/state/provider/simular_product_state.dart';
-import 'package:coice/ui/screens/product/widget/simular_product/product_simular_card.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/core/utils/utils/snapshot_handler_without_indicator.dart';
+import 'package:choicex/core/utils/utils/snapshot_handler_without_indicator.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/state/provider/simular_product_state.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/product/widget/simular_product/product_simular_card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';

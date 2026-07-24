@@ -1,6 +1,7 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/product/widget/rating_card/break_down_bars.dart';
-import 'package:coice/ui/screens/product/widget/rating_card/score_panel.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/ui/screens/product/widget/rating_card/break_down_bars.dart';
+import 'package:choicex/ui/screens/product/widget/rating_card/score_panel.dart';
 import 'package:flutter/material.dart';
 
 Widget buildSummaryCard(

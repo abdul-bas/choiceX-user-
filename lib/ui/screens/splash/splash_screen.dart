@@ -1,7 +1,7 @@
 import 'dart:math';
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/auth/bloc_auth_dispatcher.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/auth/bloc_auth_dispatcher.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

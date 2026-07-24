@@ -1,5 +1,6 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/common_widgets/text_slab.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/ui/common_widgets/text_slab.dart';
 import 'package:flutter/material.dart';
  PreferredSizeWidget buildCartHeader(BuildContext context) {
     return AppBar(

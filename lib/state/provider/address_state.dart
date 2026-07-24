@@ -1,7 +1,6 @@
+import 'package:choicex/data/models/address_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/address_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-
 import 'package:flutter/material.dart';
 
 class AddressProvider extends ChangeNotifier {

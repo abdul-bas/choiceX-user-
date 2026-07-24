@@ -1,6 +1,7 @@
+import 'package:choicex/state/bloc/product/product_state/load_ratig_event.dart';
+import 'package:choicex/state/bloc/product/product_state/product_state.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/state/bloc/product/product_state/load_ratig_event.dart';
-import 'package:coice/state/bloc/product/product_state/product_state.dart';
+
 
 class ProductRepository {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

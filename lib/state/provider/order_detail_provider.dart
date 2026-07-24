@@ -1,6 +1,7 @@
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/ui/screens/order_details/dialogs/rating_bottom_sheet/rating_bottom_sheet.dart';
+
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/ui/screens/order_details/dialogs/rating_bottom_sheet/rating_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 class OrderDetailProvider extends ChangeNotifier {
   bool _isReviewed = false;

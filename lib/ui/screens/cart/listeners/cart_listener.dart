@@ -1,10 +1,11 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/states/auth_state.dart';
-import 'package:coice/state/bloc/auth/states/cart_state.dart';
-import 'package:coice/ui/common_widgets/loading_pop.dart';
-import 'package:coice/ui/common_widgets/resute_pop.dart';
-import 'package:coice/ui/screens/cart/contorller/controller.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/states/auth_state.dart';
+import 'package:choicex/state/bloc/auth/states/cart_state.dart';
+import 'package:choicex/ui/common_widgets/loading_pop.dart';
+import 'package:choicex/ui/common_widgets/resute_pop.dart';
+import 'package:choicex/ui/screens/cart/contorller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

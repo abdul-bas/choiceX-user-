@@ -1,6 +1,8 @@
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/message_items/date_label.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/message_items/formate_date_lable.dart';
+
+
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/message_items/date_label.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/message_items/formate_date_lable.dart';
 
 List<dynamic> buildMessageItems(List<ChatMessageModel> messages) {
   if (messages.isEmpty) return [];

@@ -1,7 +1,8 @@
 
 
-import 'package:coice/data/models/chat/chat_message_model.dart';
 
+
+import 'package:choicex/data/models/chat/chat_message_model.dart';
 
 abstract class ChatState {}
 class ChatInitial extends ChatState {}

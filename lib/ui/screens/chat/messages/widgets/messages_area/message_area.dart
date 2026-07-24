@@ -1,19 +1,16 @@
-
-  
 import 'dart:convert';
-
-import 'package:coice/core/utils/handlers/chat_strem_handler.dart';
-import 'package:coice/core/utils/parsers/to_chat_model.dart';
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/state/provider/chat_provider.dart';
-import 'package:coice/ui/screens/chat/controller/message_controller.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/date_separator/date_separator.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/empty_state/empty_state.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/image_preview.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/message_bubble/message_bubble.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/message_items/date_label.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/message_items/message_items.dart';
+import 'package:choicex/core/utils/handlers/chat_strem_handler.dart';
+import 'package:choicex/core/utils/parsers/to_chat_model.dart';
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/state/provider/chat_provider.dart';
+import 'package:choicex/ui/screens/chat/controller/message_controller.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/date_separator/date_separator.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/empty_state/empty_state.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/image_preview.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/message_bubble/message_bubble.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/message_items/date_label.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/message_items/message_items.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

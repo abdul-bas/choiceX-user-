@@ -1,6 +1,5 @@
 
-
-import 'package:coice/data/models/tracking_event_model.dart';
+import 'package:choicex/data/models/tracking_event_model.dart';
 import 'package:flutter/material.dart';
 
 List<TrackingEvent> buildTrackingEvents(int currentStatusIndex) {

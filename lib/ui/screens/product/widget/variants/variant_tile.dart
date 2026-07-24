@@ -1,8 +1,8 @@
 import 'dart:typed_data';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/product/widget/variants/tile_footer.dart';
-import 'package:coice/ui/screens/product/widget/variants/tile_image.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/ui/screens/product/widget/variants/tile_footer.dart';
+import 'package:choicex/ui/screens/product/widget/variants/tile_image.dart';
 import 'package:flutter/material.dart';
 
 class VariantTile extends StatelessWidget {

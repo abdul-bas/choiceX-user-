@@ -1,7 +1,8 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/constants/app_strings/wave_bars_hights.dart';
-import 'package:coice/state/provider/audio_preview_provider.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/audio_bubble/wave_bars.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/constants/app_strings/wave_bars_hights.dart';
+import 'package:choicex/state/provider/audio_preview_provider.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/audio_bubble/wave_bars.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

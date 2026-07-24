@@ -1,7 +1,7 @@
 
-  import 'package:coice/core/constants/ui_string/variant_color.dart';
-import 'package:coice/core/constants/ui_string/variant_colors_map.dart';
-import 'package:coice/state/provider/filter_provider.dart';
+import 'package:choicex/core/constants/ui_string/variant_color.dart';
+import 'package:choicex/core/constants/ui_string/variant_colors_map.dart';
+import 'package:choicex/state/provider/filter_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

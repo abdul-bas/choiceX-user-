@@ -1,9 +1,10 @@
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/constants/ui_string/variant_color.dart';
-import 'package:coice/core/constants/ui_string/variant_storage_opts.dart';
-import 'package:coice/state/provider/filter_provider.dart';
-import 'package:coice/state/provider/product_search_controller.dart';
-import 'package:coice/ui/screens/search/product_search/variant_filter_enabled_screen/variant_filter_enabled_screen.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/constants/ui_string/variant_color.dart';
+import 'package:choicex/core/constants/ui_string/variant_storage_opts.dart';
+import 'package:choicex/state/provider/filter_provider.dart';
+import 'package:choicex/state/provider/product_search_controller.dart';
+import 'package:choicex/ui/screens/search/product_search/variant_filter_enabled_screen/variant_filter_enabled_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

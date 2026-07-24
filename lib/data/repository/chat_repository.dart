@@ -1,11 +1,11 @@
 import 'dart:io';
 
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/chat/chat_states.dart';
+import 'package:choicex/ui/screens/chat/controller/message_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
 
-import 'package:coice/state/bloc/chat/chat_states.dart';
-import 'package:coice/ui/screens/chat/controller/message_controller.dart';
 import 'package:firebase_database/firebase_database.dart' hide Query;
 import 'package:firebase_storage/firebase_storage.dart';
 

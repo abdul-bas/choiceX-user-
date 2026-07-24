@@ -1,7 +1,7 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/bloc/product/poroduct_event/load_rating.dart';
-import 'package:coice/state/bloc/product/product_bloc/product_bloc.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/bloc/product/poroduct_event/load_rating.dart';
+import 'package:choicex/state/bloc/product/product_bloc/product_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';

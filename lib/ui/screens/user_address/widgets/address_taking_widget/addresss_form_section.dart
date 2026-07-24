@@ -1,7 +1,7 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/constants/app_strings/address_type.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_taking_widget/address_input_takin_widget.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/constants/app_strings/address_type.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_taking_widget/address_input_takin_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';

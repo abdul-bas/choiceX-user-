@@ -1,10 +1,11 @@
- import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/get_discout_price.dart';
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/get_discout_price.dart';
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';

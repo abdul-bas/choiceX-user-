@@ -1,9 +1,10 @@
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/home/controller/controller.dart';
-import 'package:coice/ui/screens/home/widgets/categories_section/categories_section.dart';
-import 'package:coice/ui/screens/home/widgets/featured_banner/featured_banner.dart';
-import 'package:coice/ui/screens/home/widgets/header/header.dart';
-import 'package:coice/ui/common_widgets/all_product_variant_grid.dart';
+
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/common_widgets/all_product_variant_grid.dart';
+import 'package:choicex/ui/screens/home/controller/controller.dart';
+import 'package:choicex/ui/screens/home/widgets/categories_section/categories_section.dart';
+import 'package:choicex/ui/screens/home/widgets/featured_banner/featured_banner.dart';
+import 'package:choicex/ui/screens/home/widgets/header/header.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

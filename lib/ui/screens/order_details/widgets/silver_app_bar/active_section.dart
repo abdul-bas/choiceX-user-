@@ -1,12 +1,12 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/constants/enums/order_status.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/ui/screens/order_details/controller/controller.dart';
-import 'package:coice/ui/screens/order_details/dialogs/cancel_dialog/cancel_dialog.dart';
-import 'package:coice/ui/screens/order_tracking/order_taraking_screen.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/constants/enums/order_status.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/screens/order_details/controller/controller.dart';
+import 'package:choicex/ui/screens/order_details/dialogs/cancel_dialog/cancel_dialog.dart';
+import 'package:choicex/ui/screens/order_tracking/order_taraking_screen.dart';
 import 'package:flutter/material.dart';
 
 

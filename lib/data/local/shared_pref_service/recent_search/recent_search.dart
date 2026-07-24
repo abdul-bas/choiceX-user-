@@ -1,4 +1,6 @@
-import 'package:coice/state/bloc/recent_search/recent_search_state.dart';
+
+
+import 'package:choicex/state/bloc/recent_search/recent_search_state.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RecentSearch {

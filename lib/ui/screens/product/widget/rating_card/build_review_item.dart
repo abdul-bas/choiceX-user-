@@ -1,7 +1,7 @@
  
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/helpers/date_formate.dart';
-import 'package:coice/data/models/review_model.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/helpers/date_formate.dart';
+import 'package:choicex/data/models/review_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

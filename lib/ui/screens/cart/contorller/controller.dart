@@ -1,11 +1,12 @@
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/order_summery/order_summery.dart';
-import 'package:coice/ui/screens/user_address/add_user_address/add_address.dart';
-import 'package:coice/ui/screens/user_dashboard/DashboardScreen.dart';
+
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/order_summery/order_summery.dart';
+import 'package:choicex/ui/screens/user_address/add_user_address/add_address.dart';
+import 'package:choicex/ui/screens/user_dashboard/DashboardScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

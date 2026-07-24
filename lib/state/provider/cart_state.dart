@@ -1,5 +1,6 @@
-import 'package:coice/data/models/cart_model/cart_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
+
+import 'package:choicex/data/models/cart_model/cart_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 class CartState extends ChangeNotifier {
   final AuthRepository authRepository = AuthRepository();

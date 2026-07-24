@@ -1,21 +1,20 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:audio_waveforms/audio_waveforms.dart';
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/data/models/chat/chat_model.dart';
+import 'package:choicex/data/models/user_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/state/bloc/chat/chat_bloc.dart';
+import 'package:choicex/state/bloc/chat/chat_events.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/data/models/chat/chat_model.dart';
-import 'package:coice/data/models/user_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/state/bloc/chat/chat_bloc.dart';
-import 'package:coice/state/bloc/chat/chat_events.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
-import 'package:record/record.dart';
 import 'package:uuid/uuid.dart';
 class ChatProvider extends ChangeNotifier {
   final AuthRepository _auth = AuthRepository();

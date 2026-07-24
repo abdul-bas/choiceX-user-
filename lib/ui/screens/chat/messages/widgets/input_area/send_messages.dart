@@ -1,8 +1,9 @@
-import 'package:coice/data/models/chat/chat_message_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/bloc/chat/chat_bloc.dart';
-import 'package:coice/state/bloc/chat/chat_events.dart';
-import 'package:coice/ui/screens/chat/controller/message_controller.dart';
+
+import 'package:choicex/data/models/chat/chat_message_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/bloc/chat/chat_bloc.dart';
+import 'package:choicex/state/bloc/chat/chat_events.dart';
+import 'package:choicex/ui/screens/chat/controller/message_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';

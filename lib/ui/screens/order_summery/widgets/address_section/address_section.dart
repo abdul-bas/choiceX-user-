@@ -1,10 +1,9 @@
 
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/ui/screens/order_summery/controller/controller.dart';
 
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/ui/screens/order_summery/controller/controller.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/action_button.dart';
-import 'package:coice/ui/screens/order_summery/widgets/address_section/address_cart.dart';
-
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/action_button.dart';
+import 'package:choicex/ui/screens/order_summery/widgets/address_section/address_cart.dart';
 import 'package:flutter/material.dart';
 
 Widget buildAddressSection(

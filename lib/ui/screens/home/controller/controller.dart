@@ -1,12 +1,13 @@
-import 'package:coice/core/utils/helpers/find_categories.dart';
-import 'package:coice/core/utils/helpers/get_all_variants.dart';
-import 'package:coice/core/utils/helpers/sort_new_arrival.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/data/repository/notification_repository.dart';
-import 'package:coice/ui/common_widgets/ProductBrowseGrid.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
 
+
+import 'package:choicex/core/utils/helpers/find_categories.dart';
+import 'package:choicex/core/utils/helpers/get_all_variants.dart';
+import 'package:choicex/core/utils/helpers/sort_new_arrival.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/data/repository/notification_repository.dart';
+import 'package:choicex/ui/common_widgets/ProductBrowseGrid.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
 import 'package:flutter/material.dart';
 
 class HomeLogic {

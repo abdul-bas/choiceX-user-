@@ -1,8 +1,9 @@
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/utils/helpers/get_all_variants.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/common_widgets/all_product_variant_grid.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/utils/helpers/get_all_variants.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/common_widgets/all_product_variant_grid.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
 import 'package:flutter/material.dart';
 
 class ProductBrowseGrid extends StatelessWidget {

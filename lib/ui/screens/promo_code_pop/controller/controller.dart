@@ -1,5 +1,6 @@
 
-import 'package:coice/core/utils/helpers/get_formatted_amount.dart';
+
+import 'package:choicex/core/utils/helpers/get_formatted_amount.dart';
 
 abstract class PromoCodeController {
  

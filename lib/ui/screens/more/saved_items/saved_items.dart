@@ -1,5 +1,6 @@
-import 'package:coice/ui/screens/favorite/favorite_screen.dart';
-import 'package:coice/ui/common_widgets/text_slab.dart';
+
+import 'package:choicex/ui/common_widgets/text_slab.dart';
+import 'package:choicex/ui/screens/favorite/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class SavedItemsScreen extends StatelessWidget {

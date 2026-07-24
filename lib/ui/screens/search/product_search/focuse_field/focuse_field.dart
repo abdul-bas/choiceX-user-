@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_bloc.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_event.dart';
-import 'package:coice/state/bloc/recent_search/recent_search_state.dart';
-import 'package:coice/ui/screens/product/widget/section_label/build_section_label.dart';
-import 'package:coice/ui/screens/search/controller/controller.dart';
-import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_list.dart';
-import 'package:coice/ui/screens/search/product_search/focuse_field/widgets/recent_searches/recent_searches.dart';
-import 'package:coice/ui/screens/search/product_search/widgets/product_column_widget/product_column_widget.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_bloc.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_event.dart';
+import 'package:choicex/state/bloc/recent_search/recent_search_state.dart';
+import 'package:choicex/ui/screens/product/widget/section_label/build_section_label.dart';
+import 'package:choicex/ui/screens/search/controller/controller.dart';
+import 'package:choicex/ui/screens/search/product_search/focuse_field/widgets/acivity_list/activity_list.dart';
+import 'package:choicex/ui/screens/search/product_search/focuse_field/widgets/recent_searches/recent_searches.dart';
+import 'package:choicex/ui/screens/search/product_search/widgets/product_column_widget/product_column_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

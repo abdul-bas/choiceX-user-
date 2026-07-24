@@ -1,13 +1,13 @@
-import 'package:coice/core/utils/parsers/to_user_model.dart';
-import 'package:coice/data/models/review_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/rating_event.dart';
-import 'package:coice/ui/common_widgets/custom_text_button.dart';
-import 'package:coice/ui/common_widgets/custom_text_form_field.dart';
 
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/core/utils/parsers/to_user_model.dart';
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/data/models/review_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/rating_event.dart';
+import 'package:choicex/ui/common_widgets/custom_text_button.dart';
+import 'package:choicex/ui/common_widgets/custom_text_form_field.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

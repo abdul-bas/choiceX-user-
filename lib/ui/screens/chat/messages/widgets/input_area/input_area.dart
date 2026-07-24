@@ -1,11 +1,10 @@
 import 'package:audio_waveforms/audio_waveforms.dart';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/provider/chat_provider.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/input_area/audio_preview_bar/audio_preview_bar.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/input_area/audio_widget.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/input_area/message_icon_button/message_icon_button.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/input_area/send_messages.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/provider/chat_provider.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/input_area/audio_widget.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/input_area/message_icon_button/message_icon_button.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/input_area/send_messages.dart';
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/foundation.dart' as foundation;
 

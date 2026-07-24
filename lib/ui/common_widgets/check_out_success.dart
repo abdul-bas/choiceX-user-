@@ -1,7 +1,8 @@
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/ui/common_widgets/checkout_circle_widget.dart';
-import 'package:coice/ui/common_widgets/textInter.dart';
-import 'package:coice/ui/common_widgets/text_cripson.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/ui/common_widgets/checkout_circle_widget.dart';
+import 'package:choicex/ui/common_widgets/textInter.dart';
+import 'package:choicex/ui/common_widgets/text_cripson.dart';
 import 'package:flutter/material.dart';
 Widget checkOutSuccessPop({
   String? title,

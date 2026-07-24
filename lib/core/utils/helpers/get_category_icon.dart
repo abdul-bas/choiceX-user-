@@ -1,4 +1,5 @@
-import 'package:coice/core/constants/app_strings/categories.dart';
+
+import 'package:choicex/core/constants/app_strings/categories.dart';
 import 'package:flutter/material.dart';
 
 IconData getCategoryIcon(String name) {

@@ -1,6 +1,6 @@
 
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/ui/screens/user_dashboard/DashboardScreen.dart';
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/ui/screens/user_dashboard/DashboardScreen.dart';
 import 'package:flutter/material.dart';
 
 class OrdersEmptyState extends StatelessWidget {

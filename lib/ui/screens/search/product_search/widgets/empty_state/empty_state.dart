@@ -1,6 +1,6 @@
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/state/provider/product_search_controller.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/state/provider/product_search_controller.dart';
 import 'package:flutter/material.dart';
 
 Widget buildProductSearchEmptyState(ProductSearchController controller) {

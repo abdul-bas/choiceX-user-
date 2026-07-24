@@ -1,9 +1,10 @@
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/remote/stripe_remote_datasource.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/events/orders_event.dart';
-import 'package:coice/state/provider/cart_state.dart';
-import 'package:coice/state/provider/promo_code_pop_state.dart';
+
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/remote/stripe_remote_datasource.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/events/orders_event.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+import 'package:choicex/state/provider/promo_code_pop_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';

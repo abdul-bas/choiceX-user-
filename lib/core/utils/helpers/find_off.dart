@@ -1,4 +1,6 @@
-import 'package:coice/data/models/prodect_model.dart';
+
+
+import 'package:choicex/data/models/prodect_model.dart';
 
 int findOFF(List<ProductModel> products) {
   int maxOFF = 0;

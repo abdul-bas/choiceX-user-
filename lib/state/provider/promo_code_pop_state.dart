@@ -1,7 +1,8 @@
-import 'package:coice/core/utils/helpers/get_promo_code_discount.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/provider/cart_state.dart';
+
+import 'package:choicex/core/utils/helpers/get_promo_code_discount.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/provider/cart_state.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 

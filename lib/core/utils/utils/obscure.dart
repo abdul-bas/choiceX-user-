@@ -1,4 +1,4 @@
-import 'package:coice/state/bloc/obscure_bloc/obscure_state.dart';
+import 'package:choicex/state/bloc/obscure_bloc/obscure_state.dart';
 
 class Obscure {
   TextObs currentState = TextObs();

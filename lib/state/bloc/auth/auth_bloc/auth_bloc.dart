@@ -1,17 +1,17 @@
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/bloc/auth/events/address_event.dart';
-import 'package:coice/state/bloc/auth/events/auth_event.dart';
-import 'package:coice/state/bloc/auth/events/edit_profile_event.dart';
-import 'package:coice/state/bloc/auth/events/orders_event.dart';
-import 'package:coice/state/bloc/auth/events/update_password_event.dart';
-import 'package:coice/state/bloc/auth/states/edit_profile_states.dart';
-import 'package:coice/state/bloc/auth/states/orders_state.dart';
-import 'package:coice/state/bloc/auth/events/rating_event.dart';
-import 'package:coice/state/bloc/auth/states/auth_state.dart';
-import 'package:coice/state/bloc/auth/states/cart_state.dart';
 
-import 'package:coice/state/bloc/auth/states/rating_state.dart';
-import 'package:coice/state/bloc/auth/states/update_password_states.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/bloc/auth/events/address_event.dart';
+import 'package:choicex/state/bloc/auth/events/auth_event.dart';
+import 'package:choicex/state/bloc/auth/events/edit_profile_event.dart';
+import 'package:choicex/state/bloc/auth/events/orders_event.dart';
+import 'package:choicex/state/bloc/auth/events/rating_event.dart';
+import 'package:choicex/state/bloc/auth/events/update_password_event.dart';
+import 'package:choicex/state/bloc/auth/states/auth_state.dart';
+import 'package:choicex/state/bloc/auth/states/cart_state.dart';
+import 'package:choicex/state/bloc/auth/states/edit_profile_states.dart';
+import 'package:choicex/state/bloc/auth/states/orders_state.dart';
+import 'package:choicex/state/bloc/auth/states/rating_state.dart';
+import 'package:choicex/state/bloc/auth/states/update_password_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

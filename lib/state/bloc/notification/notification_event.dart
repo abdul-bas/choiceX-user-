@@ -1,4 +1,6 @@
-import 'package:coice/data/models/notification_model.dart';
+
+
+import 'package:choicex/data/models/notification_model.dart';
 
 abstract class NotificationEvent {}
 

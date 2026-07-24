@@ -1,10 +1,11 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/state/provider/brand_controller.dart';
-import 'package:coice/ui/screens/home/barand/widgets/empty_widget/empty_widget.dart';
-import 'package:coice/ui/screens/home/barand/widgets/header/header.dart';
-import 'package:coice/ui/screens/home/barand/widgets/sort_row/sort_row.dart';
-import 'package:coice/ui/common_widgets/brand_grid_view.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/provider/brand_controller.dart';
+import 'package:choicex/ui/common_widgets/brand_grid_view.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/empty_widget/empty_widget.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/header/header.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/sort_row/sort_row.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

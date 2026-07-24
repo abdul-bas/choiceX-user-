@@ -1,6 +1,8 @@
-import 'package:coice/data/models/coupon_model.dart';
-import 'package:coice/data/repository/auth_repository.dart';
-import 'package:coice/state/provider/cart_state.dart';
+
+import 'package:choicex/data/models/coupon_model.dart';
+import 'package:choicex/data/repository/auth_repository.dart';
+import 'package:choicex/state/provider/cart_state.dart';
+
 Future<int> getPromoCodeDiscount(
   String code,
   CartState cartState,

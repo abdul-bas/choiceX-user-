@@ -1,8 +1,9 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/product/controller/controller.dart';
-import 'package:coice/ui/screens/product/widget/silver_app_bar/product_image_slider.dart';
-import 'package:coice/ui/common_widgets/text_slab.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/common_widgets/text_slab.dart';
+import 'package:choicex/ui/screens/product/controller/controller.dart';
+import 'package:choicex/ui/screens/product/widget/silver_app_bar/product_image_slider.dart';
 import 'package:flutter/material.dart';
 
 SliverAppBar buildSliverAppBar(

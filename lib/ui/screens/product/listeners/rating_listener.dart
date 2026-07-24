@@ -1,9 +1,8 @@
-import 'package:coice/ui/common_widgets/loading_pop.dart';
-import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
-import 'package:coice/state/bloc/auth/states/auth_state.dart';
 
-
-import 'package:coice/state/bloc/auth/states/rating_state.dart';
+import 'package:choicex/state/bloc/auth/auth_bloc/auth_bloc.dart';
+import 'package:choicex/state/bloc/auth/states/auth_state.dart';
+import 'package:choicex/state/bloc/auth/states/rating_state.dart';
+import 'package:choicex/ui/common_widgets/loading_pop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

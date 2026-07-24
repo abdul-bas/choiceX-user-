@@ -1,8 +1,8 @@
  import 'dart:typed_data';
 
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/product/product_detail_page.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/product/product_detail_page.dart';
 import 'package:flutter/material.dart';
 Widget buildActivityItem({
   required BuildContext context,

@@ -1,9 +1,8 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/address_model.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_managing_widgets/address_card_body.dart';
-import 'package:coice/ui/screens/user_address/widgets/address_managing_widgets/address_card_header.dart';
 
-
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/address_model.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_managing_widgets/address_card_body.dart';
+import 'package:choicex/ui/screens/user_address/widgets/address_managing_widgets/address_card_header.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {

@@ -1,11 +1,11 @@
-// NORMAL ENUM (removed _)
-import 'package:coice/core/constants/enums/spec_kind.dart';
-import 'package:coice/core/utils/helpers/get_formatted_date.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/product/model/grop.dart';
-import 'package:coice/ui/screens/product/model/spec_item.dart';
-import 'package:coice/ui/screens/product/widget/product-datails_table/product_spec_card.dart';
-import 'package:coice/core/utils/utils/after_product_discount%20.dart';
+
+import 'package:choicex/core/constants/enums/spec_kind.dart';
+import 'package:choicex/core/utils/helpers/get_formatted_date.dart';
+import 'package:choicex/core/utils/utils/after_product_discount%20.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/product/model/grop.dart';
+import 'package:choicex/ui/screens/product/model/spec_item.dart';
+import 'package:choicex/ui/screens/product/widget/product-datails_table/product_spec_card.dart';
 import 'package:flutter/material.dart';
 
 Widget buildProductDetailsTable(int value, ProductModel product) {

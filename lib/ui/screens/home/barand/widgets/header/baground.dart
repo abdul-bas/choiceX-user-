@@ -1,7 +1,8 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/home/barand/widgets/header/decorative_circle.dart';
-import 'package:coice/ui/screens/home/barand/widgets/header/info.dart';
-import 'package:coice/ui/screens/home/barand/widgets/header/logo.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/header/decorative_circle.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/header/info.dart';
+import 'package:choicex/ui/screens/home/barand/widgets/header/logo.dart';
 import 'package:flutter/material.dart';
 
 class BrandHeaderBackground extends StatelessWidget {

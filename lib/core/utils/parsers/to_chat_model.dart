@@ -1,5 +1,5 @@
+import 'package:choicex/data/models/chat/chat_message_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:coice/data/models/chat/chat_message_model.dart';
 
 
 

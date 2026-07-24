@@ -1,6 +1,7 @@
-import 'package:coice/core/constants/app_colors.dart';
-import 'package:coice/core/constants/app_strings/price_suggetions.dart';
-import 'package:coice/state/provider/filter_provider.dart';
+
+import 'package:choicex/core/constants/app_colors.dart';
+import 'package:choicex/core/constants/app_strings/price_suggetions.dart';
+import 'package:choicex/state/provider/filter_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

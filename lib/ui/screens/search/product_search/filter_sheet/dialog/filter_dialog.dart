@@ -1,5 +1,6 @@
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/filter_sheet.dart';
+
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/filter_sheet.dart';
 import 'package:flutter/material.dart';
 
 filterFunction({

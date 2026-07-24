@@ -1,14 +1,13 @@
-import 'package:coice/core/constants/ui_string/variant_color.dart';
 
-import 'package:coice/data/models/prodect_model.dart';
 
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/bottom_bar/bottom_bar.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/budget_section/budget_section.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/color_section/color_section.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/header/header.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/section_label/section_label.dart';
-import 'package:coice/ui/screens/search/product_search/filter_sheet/widgets/storage_section/storage_section.dart';
-
+import 'package:choicex/core/constants/ui_string/variant_color.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/bottom_bar/bottom_bar.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/budget_section/budget_section.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/color_section/color_section.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/header/header.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/section_label/section_label.dart';
+import 'package:choicex/ui/screens/search/product_search/filter_sheet/widgets/storage_section/storage_section.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetScreenForSearch extends StatelessWidget {

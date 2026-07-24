@@ -1,10 +1,11 @@
 
-import 'package:coice/core/utils/helpers/get_all_variants.dart';
-import 'package:coice/state/provider/product_search_controller.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/ui/screens/search/product_search/default_product_grid/default_product-grid.dart';
-import 'package:coice/ui/screens/search/product_search/non_focus_view/widgets/category_tabs/category_tabs.dart';
-import 'package:coice/ui/screens/search/product_search/non_focus_view/widgets/empty_category/empty_category.dart';
+
+import 'package:choicex/core/utils/helpers/get_all_variants.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/state/provider/product_search_controller.dart';
+import 'package:choicex/ui/screens/search/product_search/default_product_grid/default_product-grid.dart';
+import 'package:choicex/ui/screens/search/product_search/non_focus_view/widgets/category_tabs/category_tabs.dart';
+import 'package:choicex/ui/screens/search/product_search/non_focus_view/widgets/empty_category/empty_category.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:typed_data';
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/utils/helpers/common/parse_color.dart';
-import 'package:coice/core/utils/helpers/get_formatted_amount.dart';
-import 'package:coice/core/utils/parsers/to_particular_product_model.dart';
-import 'package:coice/data/models/prodect_model.dart';
-import 'package:coice/data/repository/chat_repository.dart';
-import 'package:coice/ui/screens/chat/messages/widgets/messages_area/product_card/proudct_error.dart';
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/helpers/common/parse_color.dart';
+import 'package:choicex/core/utils/helpers/get_formatted_amount.dart';
+import 'package:choicex/core/utils/parsers/to_particular_product_model.dart';
+import 'package:choicex/data/models/prodect_model.dart';
+import 'package:choicex/data/repository/chat_repository.dart';
+import 'package:choicex/ui/screens/chat/messages/widgets/messages_area/product_card/proudct_error.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {

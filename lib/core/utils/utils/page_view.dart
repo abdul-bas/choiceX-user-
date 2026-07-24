@@ -1,4 +1,6 @@
-import 'package:coice/state/bloc/page_index/page_state.dart';
+
+
+import 'package:choicex/state/bloc/page_index/page_state.dart';
 
 class PageViewIndex {
  Future<PageState> togglePageView(int index) async {

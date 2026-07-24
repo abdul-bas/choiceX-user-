@@ -1,5 +1,5 @@
 
-import 'package:coice/ui/screens/product/model/spec_item.dart';
+import 'package:choicex/ui/screens/product/model/spec_item.dart';
 import 'package:flutter/material.dart';
 
 class Group {

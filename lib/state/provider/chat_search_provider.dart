@@ -1,8 +1,6 @@
 
-
 import 'dart:async';
-
-import 'package:coice/data/models/chat/chat_model.dart';
+import 'package:choicex/data/models/chat/chat_model.dart';
 import 'package:flutter/material.dart';
 
 class ChatSearchProvider extends ChangeNotifier {

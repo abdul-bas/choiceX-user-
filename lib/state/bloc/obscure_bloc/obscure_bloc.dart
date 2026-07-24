@@ -1,6 +1,7 @@
-import 'package:coice/core/utils/utils/obscure.dart';
-import 'package:coice/state/bloc/obscure_bloc/obscure_event.dart';
-import 'package:coice/state/bloc/obscure_bloc/obscure_state.dart';
+
+import 'package:choicex/core/utils/utils/obscure.dart';
+import 'package:choicex/state/bloc/obscure_bloc/obscure_event.dart';
+import 'package:choicex/state/bloc/obscure_bloc/obscure_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ObscureBloc extends Bloc<ObscureEvent, ObscureTextState> {

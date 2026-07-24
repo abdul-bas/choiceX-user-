@@ -1,16 +1,17 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/routes/push_function.dart';
-import 'package:coice/core/utils/parsers/to_product_model.dart';
-import 'package:coice/data/remote/firebase_service.dart';
-import 'package:coice/state/provider/address_state.dart';
-import 'package:coice/state/provider/home_controller.dart';
-import 'package:coice/ui/screens/favorite/favorite_screen.dart';
-import 'package:coice/ui/screens/home/home.dart';
-import 'package:coice/ui/screens/chat/chat/chat_screen.dart';
-import 'package:coice/ui/screens/more/more_screen.dart';
-import 'package:coice/core/utils/handlers/product_stream_handler.dart';
-import 'package:coice/ui/screens/user_dashboard/widgets/homeHeader.dart';
-import 'package:coice/ui/screens/user_dashboard/widgets/nave_bar.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/routes/push_function.dart';
+import 'package:choicex/core/utils/handlers/product_stream_handler.dart';
+import 'package:choicex/core/utils/parsers/to_product_model.dart';
+import 'package:choicex/data/remote/firebase_service.dart';
+import 'package:choicex/state/provider/address_state.dart';
+import 'package:choicex/state/provider/home_controller.dart';
+import 'package:choicex/ui/screens/chat/chat/chat_screen.dart';
+import 'package:choicex/ui/screens/favorite/favorite_screen.dart';
+import 'package:choicex/ui/screens/home/home.dart';
+import 'package:choicex/ui/screens/more/more_screen.dart';
+import 'package:choicex/ui/screens/user_dashboard/widgets/homeHeader.dart';
+import 'package:choicex/ui/screens/user_dashboard/widgets/nave_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 class DashboardScreen extends StatefulWidget {

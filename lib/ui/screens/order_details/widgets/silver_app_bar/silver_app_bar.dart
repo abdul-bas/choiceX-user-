@@ -1,11 +1,12 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/data/models/order_model.dart';
-import 'package:coice/data/repository/order_repository.dart';
-import 'package:coice/ui/screens/cart/my_cart.dart';
-import 'package:coice/ui/screens/order_details/controller/controller.dart';
-import 'package:coice/ui/screens/order_details/widgets/silver_app_bar/active_section.dart';
-import 'package:coice/ui/screens/order_details/widgets/silver_app_bar/cancelled_section.dart';
-import 'package:coice/ui/screens/order_details/widgets/silver_app_bar/delivered_section.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/data/models/order_model.dart';
+import 'package:choicex/data/repository/order_repository.dart';
+import 'package:choicex/ui/screens/cart/my_cart.dart';
+import 'package:choicex/ui/screens/order_details/controller/controller.dart';
+import 'package:choicex/ui/screens/order_details/widgets/silver_app_bar/active_section.dart';
+import 'package:choicex/ui/screens/order_details/widgets/silver_app_bar/cancelled_section.dart';
+import 'package:choicex/ui/screens/order_details/widgets/silver_app_bar/delivered_section.dart';
 import 'package:flutter/material.dart';
 
 class OrderSliverAppBar extends StatelessWidget {

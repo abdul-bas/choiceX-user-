@@ -1,8 +1,9 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/ui/screens/order/controller/controller.dart';
-import 'package:coice/ui/screens/order/widgets/history.dart';
-import 'package:coice/ui/screens/order/widgets/my_order.dart';
-import 'package:coice/core/utils/utils/snapshot_helper.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/utils/utils/snapshot_helper.dart';
+import 'package:choicex/ui/screens/order/controller/controller.dart';
+import 'package:choicex/ui/screens/order/widgets/history.dart';
+import 'package:choicex/ui/screens/order/widgets/my_order.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

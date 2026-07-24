@@ -1,5 +1,6 @@
-import 'package:coice/core/constants/app_colors/app_colors.dart';
-import 'package:coice/core/constants/enums/spec_kind.dart';
+
+import 'package:choicex/core/constants/app_colors/app_colors.dart';
+import 'package:choicex/core/constants/enums/spec_kind.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
