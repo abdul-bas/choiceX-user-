@@ -44,8 +44,7 @@ class AllProductVariantGrid extends StatelessWidget {
           childAspectRatio: 0.8,
         ),
         itemBuilder: (context, index) {
-           print(
-        '.................................${products.first.brand}...................');
+       
           final item = allVariant[index];
           final variantIndex = item['variantIndex'];
           
@@ -182,7 +181,7 @@ class AllProductVariantGrid extends StatelessWidget {
                                       TextInter(
                                         letterSpacing: 0.3,
                                         text:
-                                            'Rs. ${product.variants[variantIndex]['Price']}',
+                                            'Rs. ${product.variants[variantIndex]['price']}',
                                         fontSize: 11,
                                         fontWeight: FontWeight.w400,
                                         color: Colors.grey,

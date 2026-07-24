@@ -274,22 +274,22 @@ abstract class AppColors {
   static const Color skeletonBase  = Color(0xFFF2F2F7);
   static const Color skeletonLight = Color(0xFFF7F7FC);
 
-  static Color onImageWhiteStrong = Colors.white.withOpacity(0.90);
-  static Color onImageWhiteMid    = Colors.white.withOpacity(0.60);
-  static Color onImageWhiteFaint  = Colors.white.withOpacity(0.50);
-  static Color onImageDark        = Colors.black.withOpacity(0.78);
+  static Color onImageWhiteStrong = Colors.white.withValues(alpha:  0.90);
+  static Color onImageWhiteMid    = Colors.white.withValues(alpha:  0.60);
+  static Color onImageWhiteFaint  = Colors.white.withValues(alpha:  0.50);
+  static Color onImageDark        = Colors.black.withValues(alpha:  0.78);
 
-  static Color overlayDark    = Colors.black.withOpacity(0.30);
+  static Color overlayDark    = Colors.black.withValues(alpha:  0.30);
   static Color overlayBarrier = Colors.black.withValues(alpha: 0.40);
   static Color overlayLoading = Colors.black.withValues(alpha: 0.35);
 
-  static Color shadowFaint    = Colors.black.withOpacity(0.04);
-  static Color shadowFainter  = Colors.black.withOpacity(0.02);
+  static Color shadowFaint    = Colors.black.withValues(alpha:  0.04);
+  static Color shadowFainter  = Colors.black.withValues(alpha:  0.02);
   static Color shadowFaintest = Colors.black.withValues(alpha: 0.07);
   static Color shadowFaint5   = Colors.black.withValues(alpha: 0.05);
-  static Color shadowDark     = Colors.black.withOpacity(0.08);
-  static Color shadowMedium   = Colors.black.withOpacity(0.10);
-  static Color shadowAvatar   = Colors.black45.withOpacity(0.30);
+  static Color shadowDark     = Colors.black.withValues(alpha:  0.08);
+  static Color shadowMedium   = Colors.black.withValues(alpha:  0.10);
+  static Color shadowAvatar   = Colors.black45.withValues(alpha:  0.30);
   static Color shadowLogo     = Colors.black.withValues(alpha: 0.22);
   static Color shadowDialog   = Colors.black.withValues(alpha: 0.12);
   static Color shadowBrand    = brand.withValues(alpha: 0.18);

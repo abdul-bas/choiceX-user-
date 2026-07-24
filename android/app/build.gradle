@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace "com.example.coice"
+    namespace "com.example.choicex"
     compileSdk 36
 
     defaultConfig {
-        applicationId "com.example.coice"
+        applicationId "com.example.choicex"
 
       
         minSdkVersion flutter.minSdkVersion

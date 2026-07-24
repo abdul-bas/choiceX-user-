@@ -332,6 +332,7 @@ class AuthRepository {
         backgroundColor: Colors.red,
       );
     } catch (e) {
+      print("...................................\nerror is${e.toString()}\n..............................");
       return SocialAuthError(
         message: 'Google sign-in failed: $e',
         icon: Icons.error,
@@ -469,7 +470,10 @@ class AuthRepository {
           ...cart.toMap(),
           'quantity': 1,
         });
-        await _firestore.collection('cart').doc('count').set({'count':FieldValue.increment(1)},SetOptions(merge: true));
+        await _firestore
+            .collection('cart')
+            .doc('count')
+            .set({'count': FieldValue.increment(1)}, SetOptions(merge: true));
 
         return CartSuccessfullyAdded(
           message: "Product added to cart successfully",
@@ -482,25 +486,25 @@ class AuthRepository {
       return FavoriteError(message: "Failed to update cart: $e");
     }
   }
-   Stream<int> cartCountStream() {
-  return _firestore
-      .collection('cart')
-      .doc('count')
-      .snapshots()
-      .map((snapshot) {
-    if (!snapshot.exists) return 0;
 
-    return snapshot.data()?['count'] ?? 0;
-  });
-}
-Future<void> clearCartCount() async {
-  await _firestore
-      .collection('cart')
-      .doc('count')
-      .set({
-    'count': 0,
-  },SetOptions(merge: true));
-}
+  Stream<int> cartCountStream() {
+    return _firestore
+        .collection('cart')
+        .doc('count')
+        .snapshots()
+        .map((snapshot) {
+      if (!snapshot.exists) return 0;
+
+      return snapshot.data()?['count'] ?? 0;
+    });
+  }
+
+  Future<void> clearCartCount() async {
+    await _firestore.collection('cart').doc('count').set({
+      'count': 0,
+    }, SetOptions(merge: true));
+  }
+
   Future<AuthState> incrementQuantity({
     required String productId,
     required int variantIndex,
@@ -961,7 +965,6 @@ Future<void> clearCartCount() async {
 
       return EditProfileSuccess();
     } on FirebaseAuthException catch (e) {
-    
       return EditProfileFailure(
         error: e.message ?? 'Profile update failed',
       );
