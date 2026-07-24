@@ -34,7 +34,7 @@
               "client_id": "615627257945-0i2um1jjq2i4qmic9ed7vvjjc5aqrdg9.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.choicexUi"
+                "bundle_id": "com.example.coiceUi"
               }
             }
           ]
@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:615627257945:android:ab7f03be2f66b7f6b81948",
         "android_client_info": {
-          "package_name": "com.example.choicex"
+          "package_name": "com.example.coice"
         }
       },
       "oauth_client": [
@@ -70,7 +70,7 @@
               "client_id": "615627257945-0i2um1jjq2i4qmic9ed7vvjjc5aqrdg9.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.choicexUi"
+                "bundle_id": "com.example.coiceUi"
               }
             }
           ]
@@ -81,7 +81,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:615627257945:android:23c48bc565fca2ebb81948",
         "android_client_info": {
-          "package_name": "com.example.choicex_ui"
+          "package_name": "com.example.coice_ui"
         }
       },
       "oauth_client": [
@@ -106,7 +106,7 @@
               "client_id": "615627257945-0i2um1jjq2i4qmic9ed7vvjjc5aqrdg9.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.choicexUi"
+                "bundle_id": "com.example.coiceUi"
               }
             }
           ]
@@ -150,7 +150,7 @@
               "client_id": "615627257945-0i2um1jjq2i4qmic9ed7vvjjc5aqrdg9.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.choicexUi"
+                "bundle_id": "com.example.coiceUi"
               }
             }
           ]

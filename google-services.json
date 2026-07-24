@@ -28,7 +28,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:615627257945:android:ab7f03be2f66b7f6b81948",
         "android_client_info": {
-          "package_name": "com.example.choicex"
+          "package_name": "com.example.coice"
         }
       },
       "oauth_client": [],
@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:615627257945:android:23c48bc565fca2ebb81948",
         "android_client_info": {
-          "package_name": "com.example.choicex_ui"
+          "package_name": "com.example.coice_ui"
         }
       },
       "oauth_client": [],
