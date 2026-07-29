@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">choice_x</string>
-    <string name="facebook_app_id">586023837907921</string>
+    <string name="app_name">coice</string>
+    <string name="facebook_app_id"> 827434326893963</string>
+    <string name="facebook_client_token">6c1739ff4fb5e245dc4808a4263ee550</string>
 </resources>
