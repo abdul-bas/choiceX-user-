@@ -1,4 +1,4 @@
-
+import 'package:coice/data/repository/auth_repository.dart';
 import 'package:coice/firebase_options.dart';
 import 'package:coice/state/bloc/auth/auth_bloc/auth_bloc.dart';
 import 'package:coice/state/bloc/chat/chat_bloc.dart';
@@ -35,14 +35,14 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+ await AuthRepository().initializeGoogleSignIn();
   Stripe.publishableKey =
       'pk_test_51SYg0gImJBBi6PZmgW0MMcAsC3T5h1aEMokscIlxb5XEiX4a1dKrgRN85FlBbBV00UfgPEk8rCs5xJXBZhQqptMn00GAvsSgDR';
   await Permission.location.request();
   FirebaseAuth.instance.authStateChanges().listen((user) {
-    // if (user != null) {
-    //   AuthRepository().setUserOnlineStatus(user.uid);
-    // }
+    if (user != null) {
+      AuthRepository().setUserOnlineStatus(user.uid);
+    }
   });
   runApp(const MyApp());
 }
@@ -80,7 +80,8 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => WishlistController()),
           ChangeNotifierProvider(create: (_) => OrderDetailProvider()),
           ChangeNotifierProvider(create: (_) => ChatProvider()),
-          ChangeNotifierProvider(create: (_) => AudioPreviewProvider()), ChangeNotifierProvider(create: (_) => EditProfileProvider()),
+          ChangeNotifierProvider(create: (_) => AudioPreviewProvider()),
+          ChangeNotifierProvider(create: (_) => EditProfileProvider()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

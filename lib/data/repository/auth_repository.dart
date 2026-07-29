@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coice/core/constants/api_keys/stripe.dart';
 import 'package:coice/data/models/address_model.dart';
 import 'package:coice/data/models/cart_model/cart_model.dart';
 import 'package:coice/data/models/review_model.dart';
@@ -24,7 +25,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class AuthRepository {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
   final FacebookAuth _facebookAuth = FacebookAuth.instance;
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   String getPhoneNumber() {
@@ -274,65 +275,85 @@ class AuthRepository {
     }
   }
 
+  Future<void> initializeGoogleSignIn() async {
+    await _googleSignIn.initialize(
+      clientId: clientId,
+      serverClientId: serverClientId,
+    );
+  }
+
   Future<AuthState?> signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
-      if (googleUser == null) {
-        return SocialAuthError(
-          message: 'Google Sign-In canceled by user',
-          icon: Icons.error_outline,
-          backgroundColor: Colors.orange,
-        );
-      }
+      final GoogleSignInAccount googleUser = await _googleSignIn.authenticate();
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
 
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
+      final AuthCredential credential = GoogleAuthProvider.credential(
         idToken: googleAuth.idToken,
       );
 
-      final userCredential = await _auth.signInWithCredential(credential);
-      final user = userCredential.user;
-      if (user != null) {
-        final userDoc = await _firestore.collection('user').doc(user.uid).get();
-        if (!userDoc.exists) {
-          final newUser = UserModel(
-              name: user.displayName ?? '',
-              email: user.email ?? '',
-              password: '',
-              uid: user.uid,
-              fcmToken: '',
-              createdAt: DateTime.now());
-          await _firestore
-              .collection('user')
-              .doc(user.uid)
-              .set(newUser.toMap());
-          return SocialAuthSuccess(
-            user: newUser,
-            message: 'Google sign-in successful (new user)',
-            icon: Icons.check_circle,
-            backgroundColor: Colors.green,
-            duration: const Duration(seconds: 3),
-          );
-        } else {
-          return SocialAuthSuccess(
-            user: UserModel.fromMap(userDoc.data()!),
-            message: 'Google sign-in successful (existing user)',
-            icon: Icons.check_circle,
-            backgroundColor: Colors.green,
-            duration: const Duration(seconds: 3),
-          );
-        }
+      final UserCredential userCredential =
+          await _auth.signInWithCredential(credential);
+
+      final User? user = userCredential.user;
+
+      if (user == null) {
+        return SocialAuthError(
+          message: 'Google sign-in failed: No user data',
+          icon: Icons.error,
+          backgroundColor: Colors.red,
+        );
       }
+
+      final DocumentSnapshot<Map<String, dynamic>> userDoc =
+          await _firestore.collection('user').doc(user.uid).get();
+
+      if (!userDoc.exists) {
+        final UserModel newUser = UserModel(
+          name: user.displayName ?? '',
+          email: user.email ?? '',
+          password: '',
+          uid: user.uid,
+          fcmToken: '',
+          createdAt: DateTime.now(),
+        );
+
+        await _firestore.collection('user').doc(user.uid).set(newUser.toMap());
+
+        return SocialAuthSuccess(
+          user: newUser,
+          message: 'Google sign-in successful (new user)',
+          icon: Icons.check_circle,
+          backgroundColor: Colors.green,
+          duration: const Duration(seconds: 3),
+        );
+      }
+
+      final UserModel existingUser = UserModel.fromMap(userDoc.data()!);
+
+      return SocialAuthSuccess(
+        user: existingUser,
+        message: 'Google sign-in successful (existing user)',
+        icon: Icons.check_circle,
+        backgroundColor: Colors.green,
+        duration: const Duration(seconds: 3),
+      );
+    } on GoogleSignInException catch (e) {
+        print('..........\n................. $e............... \n...........');
       return SocialAuthError(
-        message: 'Google sign-in failed: No user data',
+        message: 'Google Sign-In failed: ${e.description}',
+        icon: Icons.error,
+        backgroundColor: Colors.red,
+      );
+    } on FirebaseAuthException catch (e) {
+      
+      return SocialAuthError(
+        message: 'Firebase authentication failed: ${e.message}',
         icon: Icons.error,
         backgroundColor: Colors.red,
       );
     } catch (e) {
-      print("...................................\nerror is${e.toString()}\n..............................");
+    
       return SocialAuthError(
         message: 'Google sign-in failed: $e',
         icon: Icons.error,
