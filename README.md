@@ -1,7 +1,7 @@
 # ChoiceX — User Application
 
 <p align="center">
-  <img src="assets/logo.png" width="180" alt="ChoiceX Logo">
+  <img src="assets/images/Choice_.png" width="180" alt="ChoiceX Logo">
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@ A full-stack Flutter electronics e-commerce application covering the complete cu
 
 This repository contains the **user-facing (customer) application** — the app end customers install to browse, buy, and track orders. It does not include any admin or seller-side tooling.
 
-Users authenticate securely, browse a catalog of electronic products, and evaluate each product through images, pricing, ratings, and variant options such as **color and RAM** before adding it to their cart. From there, ChoiceX carries the user through coupon application, Stripe payment, order placement, real-time order tracking, and post-purchase rating — with in-app chat, notifications, and location-aware delivery support layered on top.
+Users authenticate securely — via email/password, Google, or Facebook — browse a catalog of electronic products, and evaluate each product through images, pricing, ratings, and variant options such as **color and RAM** before adding it to their cart. From there, ChoiceX carries the user through coupon application, Stripe payment, order placement, real-time order tracking, and post-purchase rating — with in-app chat, notifications, and location-aware delivery support layered on top.
 
 > **Discover the product. Trust the details. Complete the purchase.**
 
@@ -35,6 +35,7 @@ Users authenticate securely, browse a catalog of electronic products, and evalua
 
 ```
 Secure Authentication
+(Email / Google / Facebook)
         ↓
     Home Screen
         ↓
@@ -68,7 +69,7 @@ Firebase keeps product, user, order, and chat data in sync in real time. Stripe 
 
 | Area | What ChoiceX provides |
 |---|---|
-| **Authentication** | Email/password and Google Sign-In, phone verification via pin code entry |
+| **Authentication** | Email/password, Google Sign-In, Facebook Sign-In, and phone verification via pin code entry |
 | **Product discovery** | Home feed, brand browsing, search, category and variant grids |
 | **Product details** | Images, pricing, ratings, similar products, color/RAM variant selection |
 | **Wishlist & cart** | Save products for later, manage cart quantities and totals |
