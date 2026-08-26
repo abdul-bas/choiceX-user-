@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-A full-stack Flutter electronics e-commerce application covering the complete customer journey — from secure authentication and product discovery to cart, checkout, payment, order tracking, and in-app chat.
+A full-stack Flutter electronics e-commerce application covering the complete customer journey — from secure authentication and product discovery to cart, checkout, payment, order tracking, and direct in-app chat with sellers.
 </p>
 
 ---
@@ -26,6 +26,8 @@ A full-stack Flutter electronics e-commerce application covering the complete cu
 This repository contains the **user-facing (customer) application** — the app end customers install to browse, buy, and track orders. It does not include any admin or seller-side tooling.
 
 Users authenticate securely — via email/password, Google, or Facebook — browse a catalog of electronic products, and evaluate each product through images, pricing, ratings, and variant options such as **color and RAM** before adding it to their cart. From there, ChoiceX carries the user through coupon application, Stripe payment, order placement, real-time order tracking, and post-purchase rating — with in-app chat, notifications, and location-aware delivery support layered on top.
+
+ChoiceX also includes a **direct chat system connecting buyers and sellers**. Rather than routing every question through a support desk, users can message the seller of a product directly — asking about specifications, availability, or order details in real time. This makes the shopping experience feel more personal for the buyer, and gives sellers a direct channel to build trust, answer questions quickly, and grow their own customer relationships.
 
 > **Discover the product. Trust the details. Complete the purchase.**
 
@@ -61,7 +63,7 @@ Rating  Similar    Variants
    Rate the Product
 ```
 
-Firebase keeps product, user, order, and chat data in sync in real time. Stripe handles payment. Google Maps and location services support delivery tracking.
+Firebase keeps product, user, order, and buyer-seller chat data in sync in real time. Stripe handles payment. Google Maps and location services support delivery tracking.
 
 ---
 
@@ -77,7 +79,7 @@ Firebase keeps product, user, order, and chat data in sync in real time. Stripe 
 | **Payments** | Stripe-based checkout and refund handling |
 | **Orders** | Order placement, order summary, order details, real-time order tracking with map view |
 | **Ratings** | View and submit product ratings, rating-based filtering |
-| **Messaging** | In-app chat with text, voice notes, emoji, and file attachments |
+| **Messaging** | Direct in-app chat between buyer and seller — text, voice notes, emoji, and file attachments |
 | **Notifications** | Push notifications via Firebase Cloud Messaging and local notifications |
 | **Account** | User dashboard, saved addresses, account and app settings |
 
@@ -237,7 +239,7 @@ flutter run
 
 ## Project Status
 
-ChoiceX (User Application) is an actively developed Flutter e-commerce application covering the full customer journey: authentication, product discovery, variant selection, wishlist, cart, promo codes, Stripe payment, order placement and tracking, in-app chat, notifications, and product ratings.
+ChoiceX (User Application) is an actively developed Flutter e-commerce application covering the full customer journey: authentication, product discovery, variant selection, wishlist, cart, promo codes, Stripe payment, order placement and tracking, direct buyer-seller chat, notifications, and product ratings.
 
 This is a private repository. All rights are reserved.
 
