@@ -1,123 +1,150 @@
+<div align="center">
+
+<img src="assets/images/Choice_.png" width="160" alt="ChoiceX Logo">
+
 # ChoiceX — User Application
 
-<p align="center">
-  <img src="assets/images/Choice_.png" width="180" alt="ChoiceX Logo">
-</p>
+**The customer-facing app for the ChoiceX electronics e-commerce platform.**
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Project Status">
-  <img src="https://img.shields.io/badge/platform-Flutter-02569B?logo=flutter&logoColor=white" alt="Platform">
-  <img src="https://img.shields.io/badge/language-Dart-0175C2?logo=dart&logoColor=white" alt="Language">
-  <img src="https://img.shields.io/badge/backend-Firebase-FFCA28?logo=firebase&logoColor=black" alt="Backend">
-  <img src="https://img.shields.io/badge/payments-Stripe-635BFF?logo=stripe&logoColor=white" alt="Payments">
-  <img src="https://img.shields.io/badge/license-private-lightgrey" alt="License">
-</p>
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](#project-status)
+[![Platform](https://img.shields.io/badge/platform-Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)](#technology-stack)
+[![Language](https://img.shields.io/badge/language-Dart-0175C2?style=flat-square&logo=dart&logoColor=white)](#technology-stack)
+[![Backend](https://img.shields.io/badge/backend-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)](#technology-stack)
+[![Payments](https://img.shields.io/badge/payments-Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)](#technology-stack)
+[![License](https://img.shields.io/badge/license-private-lightgrey?style=flat-square)](#license)
 
-<p align="center">
-A full-stack Flutter electronics e-commerce application covering the complete customer journey — from secure authentication and product discovery to cart, checkout, payment, order tracking, and direct in-app chat with sellers.
-</p>
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [The Shopping Experience](#the-shopping-experience)
+- [Product Capabilities](#product-capabilities)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [Useful Commands](#useful-commands)
+- [Project Status](#project-status)
+- [License](#license)
 
 ---
 
 ## Overview
 
-**ChoiceX** is an electronics e-commerce application built with Flutter and backed by Firebase.
+**ChoiceX** is a full-stack **Flutter** electronics e-commerce application, backed by **Firebase**, covering the complete customer journey — from secure authentication and product discovery to cart, checkout, payment, order tracking, and direct in-app chat with sellers.
 
-This repository contains the **user-facing (customer) application** — the app end customers install to browse, buy, and track orders. It does not include any admin or seller-side tooling.
+This repository contains the **user-facing (customer) application** — the app end customers install to browse, buy, and track orders.
+
+> **Note:** This app does *not* include any admin or seller-side tooling — those live in their respective apps.
 
 Users authenticate securely — via email/password, Google, or Facebook — browse a catalog of electronic products, and evaluate each product through images, pricing, ratings, and variant options such as **color and RAM** before adding it to their cart. From there, ChoiceX carries the user through coupon application, Stripe payment, order placement, real-time order tracking, and post-purchase rating — with in-app chat, notifications, and location-aware delivery support layered on top.
 
 ChoiceX also includes a **direct chat system connecting buyers and sellers**. Rather than routing every question through a support desk, users can message the seller of a product directly — asking about specifications, availability, or order details in real time. This makes the shopping experience feel more personal for the buyer, and gives sellers a direct channel to build trust, answer questions quickly, and grow their own customer relationships.
 
-> **Discover the product. Trust the details. Complete the purchase.**
+<div align="center">
+
+**Discover the product. Trust the details. Complete the purchase.**
+
+</div>
 
 ---
 
 ## The Shopping Experience
 
 ```
-Secure Authentication
-(Email / Google / Facebook)
-        ↓
-    Home Screen
-        ↓
- Browse Products
-        ↓
- Product Details
-        ↓
- ┌──────┼───────────┐
- ↓      ↓           ↓
-Rating  Similar    Variants
-        Products   (Color / RAM)
-        ↓
-   Add to Wishlist / Cart
-        ↓
-    Apply Promo Code
-        ↓
-   Checkout / Payment (Stripe)
-        ↓
-    Place Order
-        ↓
- Order Tracking (map + status)
-        ↓
-   Rate the Product
+              Secure Authentication
+             (Email / Google / Facebook)
+                         │
+                         ▼
+                    Home Screen
+                         │
+                         ▼
+                 Browse Products
+                         │
+                         ▼
+                 Product Details
+                         │
+        ┌────────────────┼──────────────────┐
+        ▼                ▼                  ▼
+     Rating          Similar             Variants
+                      Products          (Color / RAM)
+                                              │
+                                              ▼
+                              Add to Wishlist / Cart
+                                              │
+                                              ▼
+                                Apply Promo Code
+                                              │
+                                              ▼
+                         Checkout / Payment (Stripe)
+                                              │
+                                              ▼
+                                    Place Order
+                                              │
+                                              ▼
+                        Order Tracking (map + status)
+                                              │
+                                              ▼
+                                Rate the Product
 ```
 
-Firebase keeps product, user, order, and buyer-seller chat data in sync in real time. Stripe handles payment. Google Maps and location services support delivery tracking.
+Firebase keeps product, user, order, and buyer-seller chat data in sync **in real time**. Stripe handles payment. Google Maps and location services support delivery tracking.
 
 ---
 
 ## Product Capabilities
 
-| Area | What ChoiceX provides |
+| Area | What ChoiceX Provides |
 |---|---|
-| **Authentication** | Email/password, Google Sign-In, Facebook Sign-In, and phone verification via pin code entry |
-| **Product discovery** | Home feed, brand browsing, search, category and variant grids |
-| **Product details** | Images, pricing, ratings, similar products, color/RAM variant selection |
-| **Wishlist & cart** | Save products for later, manage cart quantities and totals |
-| **Promotions** | Promo code entry and discount application at checkout |
-| **Payments** | Stripe-based checkout and refund handling |
-| **Orders** | Order placement, order summary, order details, real-time order tracking with map view |
-| **Ratings** | View and submit product ratings, rating-based filtering |
-| **Messaging** | Direct in-app chat between buyer and seller — text, voice notes, emoji, and file attachments |
-| **Notifications** | Push notifications via Firebase Cloud Messaging and local notifications |
-| **Account** | User dashboard, saved addresses, account and app settings |
+| 🔐 **Authentication** | Email/password, Google Sign-In, Facebook Sign-In, and phone verification via pin code entry |
+| 🔎 **Product Discovery** | Home feed, brand browsing, search, category and variant grids |
+| 🛒 **Product Details** | Images, pricing, ratings, similar products, color/RAM variant selection |
+| ❤️ **Wishlist & Cart** | Save products for later, manage cart quantities and totals |
+| 🏷️ **Promotions** | Promo code entry and discount application at checkout |
+| 💳 **Payments** | Stripe-based checkout and refund handling |
+| 📦 **Orders** | Order placement, order summary, order details, real-time order tracking with map view |
+| ⭐ **Ratings** | View and submit product ratings, rating-based filtering |
+| 💬 **Messaging** | Direct in-app chat between buyer and seller — text, voice notes, emoji, and file attachments |
+| 🔔 **Notifications** | Push notifications via Firebase Cloud Messaging and local notifications |
+| 👤 **Account** | User dashboard, saved addresses, account and app settings |
 
 ---
 
 ## Architecture
 
-ChoiceX follows a layered Flutter structure that separates configuration, core utilities, data access, application state, and UI.
+ChoiceX follows a **layered Flutter structure** that cleanly separates configuration, core utilities, data access, application state, and UI.
 
 ```
 Flutter App (Dart)
-  ├── config           App-wide configuration
-  ├── core             Constants, routes, theme, utils
-  ├── data
-  │   ├── local         Local persistence
-  │   ├── models        Data models
-  │   ├── remote         Remote data sources
-  │   └── repository    auth, chat, notification, order, product repositories
-  ├── services          Payment services (Stripe, refunds)
-  ├── state
-  │   ├── auth
-  │   ├── bloc          flutter_bloc state management
-  │   └── provider      Provider-based state management
-  └── ui
-      ├── common_widgets    Shared, reusable UI components
-      └── screens           Feature screens
-                  │
-                  ▼
-      Firebase (Auth, Firestore, Storage,
-      Realtime Database, Cloud Messaging)
-                  │
-                  ▼
-             Stripe Payments
+├── config           App-wide configuration
+├── core             Constants, routes, theme, utils
+├── data
+│   ├── local        Local persistence
+│   ├── models       Data models
+│   ├── remote       Remote data sources
+│   └── repository   auth, chat, notification, order, product repositories
+├── services         Payment services (Stripe, refunds)
+├── state
+│   ├── auth
+│   ├── bloc         flutter_bloc state management
+│   └── provider     Provider-based state management
+└── ui
+    ├── common_widgets    Shared, reusable UI components
+    └── screens           Feature screens
+                │
+                ▼
+    Firebase (Auth, Firestore, Storage,
+    Realtime Database, Cloud Messaging)
+                │
+                ▼
+           Stripe Payments
 ```
 
 ### Repository Layer
 
-Data access is centralized behind dedicated repositories so screens never talk to Firebase directly:
+Data access is centralized behind dedicated repositories so screens **never** talk to Firebase directly:
 
 ```
 data/repository/
@@ -132,35 +159,34 @@ data/repository/
 
 Each feature is isolated under its own folder in `ui/screens/`:
 
-```
-ui/screens/
-├── account/
-├── auth/
-├── cart/
-├── chat/
-├── favorite/
-├── home/
-├── more/
-├── order/
-├── order_details/
-├── order_summery/
-├── order_tracking/
-├── product/
-├── promo_code_pop/
-├── search/
-├── splash/
-├── user_address/
-├── user_dashboard/
-└── welcome_screen/
-```
+| Folder | Responsibility |
+|---|---|
+| `account/` | User account & profile |
+| `auth/` | Sign-in / sign-up flows |
+| `cart/` | Cart management |
+| `chat/` | Buyer-seller messaging |
+| `favorite/` | Wishlist |
+| `home/` | Home feed & browsing |
+| `more/` | Additional/settings menu |
+| `order/` | Order list |
+| `order_details/` | Order detail view |
+| `order_summery/` | Order summary at checkout |
+| `order_tracking/` | Real-time order tracking |
+| `product/` | Product detail view |
+| `promo_code_pop/` | Promo code entry |
+| `search/` | Product search |
+| `splash/` | Splash/launch screen |
+| `user_address/` | Saved delivery addresses |
+| `user_dashboard/` | User dashboard |
+| `welcome_screen/` | Landing/entry screen |
 
 ### Architectural Principles
 
-- Configuration, core utilities, and theming are isolated from feature screens.
-- All Firebase and Stripe access is routed through the `data/repository` and `services` layers — screens consume repositories, not SDKs directly.
-- State is managed with a mix of `flutter_bloc` (feature-level state) and `Provider` (shared/app-level state), each under its own folder in `state/`.
-- Reusable UI (buttons, text fields, loaders, product grids) lives in `ui/common_widgets` and is shared across every screen.
-- Each customer-journey step — cart, checkout, order, tracking — is its own screen module rather than a single monolithic flow.
+- ⚙️ Configuration, core utilities, and theming are isolated from feature screens.
+- 🔌 All Firebase and Stripe access is routed through the `data/repository` and `services` layers — screens consume repositories, not SDKs directly.
+- 🧠 State is managed with a mix of `flutter_bloc` (feature-level state) and `Provider` (shared/app-level state), each under its own folder in `state/`.
+- 🧩 Reusable UI (buttons, text fields, loaders, product grids) lives in `ui/common_widgets` and is shared across every screen.
+- 📁 Each customer-journey step — cart, checkout, order, tracking — is its own screen module rather than a single monolithic flow.
 
 ---
 
@@ -201,30 +227,32 @@ ui/screens/
 
 ### Prerequisites
 
-- Flutter SDK
-- Dart SDK
-- Android Studio or VS Code
-- Android Emulator or physical Android device
-- A configured Firebase project (`firebase_options.dart`)
-- A Stripe account for payment testing
+- ✅ Flutter SDK
+- ✅ Dart SDK
+- ✅ Android Studio or VS Code
+- ✅ Android Emulator or physical Android device
+- ✅ A configured Firebase project (`firebase_options.dart`)
+- ✅ A Stripe account for payment testing
 
 ### Installation
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone <repository-url>
 
-# Navigate to the project
+# 2. Navigate to the project
 cd choiceX
 
-# Install dependencies
+# 3. Install dependencies
 flutter pub get
 
-# Run the application
+# 4. Run the application
 flutter run
 ```
 
-### Useful Commands
+---
+
+## Useful Commands
 
 | Command | Purpose |
 |---|---|
@@ -239,8 +267,29 @@ flutter run
 
 ## Project Status
 
-ChoiceX (User Application) is an actively developed Flutter e-commerce application covering the full customer journey: authentication, product discovery, variant selection, wishlist, cart, promo codes, Stripe payment, order placement and tracking, direct buyer-seller chat, notifications, and product ratings.
+🟢 **Actively developed.** ChoiceX (User Application) currently covers the full customer journey:
 
-This is a private repository. All rights are reserved.
+- ✅ Authentication
+- ✅ Product discovery
+- ✅ Variant selection
+- ✅ Wishlist & cart
+- ✅ Promo codes
+- ✅ Stripe payment
+- ✅ Order placement and tracking
+- ✅ Direct buyer-seller chat
+- ✅ Notifications
+- ✅ Product ratings
 
-> **Discover the product. Trust the details. Complete the purchase.**
+---
+
+## License
+
+This is a **private repository**. All rights reserved.
+
+<div align="center">
+
+Made with 💙 for the ChoiceX Platform
+
+**Discover the product. Trust the details. Complete the purchase.**
+
+</div>
